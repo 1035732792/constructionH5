@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>项目概况</title>
+	<link href="css/header.css" rel="stylesheet" type="text/css" />
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<!-- <link href="css/date/jedate.css" rel="stylesheet" type="text/css"/> -->
+	<!-- <link href="css/date/jeDate-test.css" rel="stylesheet" type="text/css" /> -->
+	<style type="text/css">
+		/* .jedate{
+			position: absolute;
+			top: 10% !important;
+			right: 30px !important;
+			left: auto !important;
+		} */
+	</style>
+</head>
+<body>
+	<div class="main-box">
+		<div class="header-box">
+			<div class="header-left">
+				<p class="header-title">智慧工地管理平台</p>
+			</div>
+			<div class="header-right">
+				<div class="navbar-list">
+					<ul class="ul-list">
+						<li>
+							<a href="#" class="active-navbar">项目概况</a>
+							<img src="img/active-img.png" class="active-img" />
+						</li>
+						<span>/</span>
+						<li><a href="mapsite.html">工地一张图</a></li><span>/</span>
+						<li><a href="person.html">人员管理</a></li><span>/</span>
+						<li><a href="carNews.html">车辆管理</a></li><span>/</span>
+						<li><a href="realtimeVideo.html">现场视频</a></li><span>/</span>
+						<li><a href="towerNews.html">塔吊监测</a></li><span>/</span>
+						<li><a href="#">环境监测</a></li><span>/</span>
+						<li><a href="#">安全教育</a></li><span>/</span>
+						<li><a href="#">工地巡检</a></li><span>/</span>
+						<li><a href="#">配置管理</a></li><span>/</span>
+						<li><a href="#">BIM</a></li>
+					</ul>
+				</div>
+				<div class="date-box">
+					<div class="title-group">
+						<img src="img/tongzhi.png" id="showImg" />
+						<p class="talk-text">通知公告：</p>
+					</div>
+					<marquee behavior="scroll" direction="left" class="scroll-text">预计武汉洪山区今晚有大到暴雨，请大家做好安全防范措施，安全才能回家！这段橙色文字向左轮播滚动，多余部分不显示！</marquee>
+					<div class="user-box">
+						<div class="user-inner">
+							<img src="img/user.png" />
+							<p>admin</p>
+						</div>
+						<div class="user-inner order-user">
+							<img src="img/close.png" />
+							<p>退出</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="line-box"></div>
+		
+		<div class="top-box">
+			<div class="mis-box">
+				<p class="mis-box-text">基建MIS</p>
+				<div class="cricle-top">
+					<div class="cricle-left">
+						<div class="circleChart" id="cricleOne"></div>
+						<p class="text-order">项目进度</p>
+					</div>
+					<div class="cricle-right">
+						<ul class="time-list">
+							<li>开始时间：<span>2018-06-05</span></li>
+							<li>竣工时间：<span>2018-06-05</span></li>
+							<li>剩余时间：<span>3个月20天</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="cricle-bottom">
+					<ul class="search-list">
+						<li>
+							<p class="search-text">已读</p>
+							<p class="search-num">16,098</p>
+						</li>
+						<li>
+							<p class="search-text">已审核</p>
+							<p class="search-num">16,098</p>
+						</li>
+						<li>
+							<p class="search-text">已完成</p>
+							<p class="search-num">16,098</p>
+						</li>
+					</ul>
+					<ul class="search-list">
+						<li>
+							<p class="search-text">未读</p>
+							<p class="search-num">16,098</p>
+						</li>
+						<li>
+							<p class="search-text">未审核</p>
+							<p class="search-num">16,098</p>
+						</li>
+						<li>
+							<p class="search-text">未完成</p>
+							<p class="search-num">16,098</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="video-box">
+				<div class="search-video">
+					<video id="myPlayer" class="video-area" poster="img/work1.png" autoplay controls muted="muted" src="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8"  playsInline webkit-playsinline></video>
+				</div>
+				<div class="list-box">
+					<img src="img/leftIocn.png" class="left-btn-img" />
+					<ul class="video-list" id="videoList">
+						<li class="li-style video-active" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623581</p>
+							</div>
+						</li>
+						<li class="li-style" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623582</p>
+							</div>
+						</li>
+						<li class="li-style" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623583</p>
+							</div>
+						</li>
+						<li class="li-style" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623584</p>
+							</div>
+						</li>
+						<li class="li-style" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623585</p>
+							</div>
+						</li>
+						<li class="li-style" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623584</p>
+							</div>
+						</li>
+						<li class="li-style" data-url="http://hls.open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8">
+							<div class="video-equipment">
+								<p>设备：SN623585</p>
+							</div>
+						</li>
+					</ul>
+					<img src="img/rightIcon.png" class="right-btn-img" />
+				</div>
+			</div>
+			
+			<div class="management-box">
+				<div class="management-top">
+					<ul class="management-list">
+						<li>
+							<div class="center-text">
+								<p class="num">23</p>
+								<p class="type-name">烟火预警</p>
+							</div>
+						</li>
+						<li>
+							<div class="center-text">
+								<p class="num order-num">23</p>
+								<p class="type-name">徘徊预警</p>
+							</div>
+						</li>
+						<li>
+							<div class="center-text">
+								<p class="num order-num-two">23</p>
+								<p class="type-name">安全帽预警</p>
+							</div>
+						</li>
+						<li>
+							<div class="center-text">
+								<p class="num order-num-three">23</p>
+								<p class="type-name">其他预警</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="management-bottom">
+					<p class="mis-box-text">考勤管理</p>
+					<div class="detail-box">
+						<div class="echart-box">
+							<div class="orderCircleChart" id="cricleTwo"></div>
+							<p class="detail-text">迟到：21</p>
+						</div>
+						<div class="echart-box">
+							<div class="orderCircleChart" id="cricleThree"></div>
+							<p class="detail-text">早退：39</p>
+						</div>
+						<div class="echart-box">
+							<div class="orderCircleChart" id="cricleFour"></div>
+							<p class="detail-text">请假：26</p>
+						</div>
+						<div class="echart-box">
+							<div class="orderCircleChart" id="cricleFive"></div>
+							<p class="detail-text">旷工：14</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="line-box"></div>
+		
+		<div class="bottom-box">
+			<div class="mis-box">
+				<p class="mis-box-text car-title">车辆管理</p>
+				<div class="car-top">
+					<div class="left-img">
+						<img src="img/car.png" />
+					</div>
+					<div class="right-news">
+						<div class="address-news">
+							<p>宏泰国资创新港</p>
+							<!-- <a href="#">编辑</a> -->
+						</div>
+						<ul class="time-list news-list auto-style">
+							<li>车牌号码：<span>鄂A1524A</span></li>
+							<li>进出类型：<span>进入</span></li>
+							<li>创建时间：<span>2019-05-21 19:22</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="car-bottom">
+					<ul class="car-list">
+						<li>
+							<div class="address">
+								<p>宏泰国资创新港</p>
+							</div>
+							<div class="type">
+								<p class="car-num">鄂A1524A</p>
+							</div>
+							<div class="type">
+								<p class="join-color">进入</p>
+							</div>
+							<div class="address">
+								<p>2019-05-21 19:22</p>
+							</div>
+						</li>
+						<li>
+							<div class="address">
+								<p>宏泰国资创新港</p>
+							</div>
+							<div class="type">
+								<p class="car-num">鄂A1524A</p>
+							</div>
+							<div class="type">
+								<p class="join-color">进入</p>
+							</div>
+							<div class="address">
+								<p>2019-05-21 19:22</p>
+							</div>
+						</li>
+						<li>
+							<div class="address">
+								<p>宏泰国资创新港</p>
+							</div>
+							<div class="type">
+								<p class="car-num">鄂A1524A</p>
+							</div>
+							<div class="type">
+								<p class="join-color">进入</p>
+							</div>
+							<div class="address">
+								<p>2019-05-21 19:22</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="video-box preson-box">
+				<p class="mis-box-text car-title">在场人数</p>
+				<div id="echarts1" class="echarts-view"></div>
+			</div>
+			
+			<div class="mis-box last-box">
+				<p class="mis-box-text car-title">环境监测</p>
+				<div class="last-content">
+					<div class="content-box">
+						<div class="pm-boxs">
+							<div class="center-text">
+								<p>13ug/m³</p>
+								<p>PM2.5</p>
+							</div>
+						</div>
+						<div class="pm-boxs pm-boxs-two">
+							<div class="center-text">
+								<p>16ug/m³</p>
+								<p>PM10</p>
+							</div>
+						</div>
+					</div>
+					<div class="content-box">
+						<div class="pm-boxs pm-boxs-three">
+							<div class="center-text">
+								<p>21.5℃</p>
+								<p>温度</p>
+							</div>
+						</div>
+						<div class="pm-boxs pm-boxs-four">
+							<div class="center-text">
+								<p>86.7%</p>
+								<p>湿度</p>
+							</div>
+						</div>
+					</div>
+					<div class="content-box">
+						<div class="pm-boxs pm-boxs-five">
+							<div class="center-text">
+								<p>60.7db</p>
+								<p>噪音</p>
+							</div>
+						</div>
+						<div class="pm-boxs pm-boxs-six">
+							<div class="center-text">
+								<p>3m/s</p>
+								<p>北风</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="js/ezuikit.js" type="text/javascript"></script>
+<script src="js/echarts.common.min.js" type="text/javascript"></script>
+<script src="js/circleChart.min.js" type="text/javascript"></script>
+<!-- <script src="js/js-date/jedate.js" type="text/javascript"></script> -->
+<script src="js/super_slider.js" type="text/javascript"></script>
+<script type="text/javascript">
+	// jeDate(".jeindiv",{
+ //        format: "YYYY-MM-DD",
+	// 	isinitVal: true
+ //    });
+	
+	var player = new EZUIKit.EZUIPlayer('myPlayer');
+	player.play();
+	var myPlayer = $("#myPlayer");
+	$(".list-box").superSlider({
+		prevBtn: 	 ".left-btn-img",//左按钮
+		nextBtn: 	 ".right-btn-img",//右按钮
+		listCont:    ".video-list",//滚动列表外层
+		scrollWhere: "prev",//自动滚动方向next
+		showNum:     document.body.clientWidth < 1600 ? 4:6,
+		speed: 		 500,//滚动速度
+		autoPlay: 	 false//自动播放
+	});
+	
+	$("body").on("click",".li-style",function(){
+		var urls = $(this).attr("data-url");
+			$(myPlayer).attr("src", urls);
+			var player = new EZUIKit.EZUIPlayer('myPlayer');
+			player.play();
+		$(this).addClass("video-active").siblings().removeClass("video-active");
+	})
+	
+	var showImg = $("#showImg");
+	setInterval(function(){
+		$(showImg).hide(function(){
+			$(this).show();
+		});
+	},1000)
+	
+	$("#cricleOne").circleChart({
+		size: 160,
+		value: 50,
+		text: 0,
+		color: "#005E6F",
+		backgroundColor:'#00E4FF',
+		lineCap:'butt',
+		onDraw: function(el, circle) {
+			circle.text(Math.round(circle.value) + "<span style='font-size:16px;'>%<span>");
+		}
+	});
+	
+	$("#cricleTwo").circleChart({
+		size: 90,
+		value: 50,
+		text: 0,
+		color: "#52555C",
+		backgroundColor:'#66A6FF',
+		onDraw: function(el, circle) {
+			circle.text(Math.round(circle.value) + "<span style='font-size:16px;'>%<span>");
+		}
+	});
+	$("#cricleThree").circleChart({
+		size: 90,
+		value: 50,
+		text: 0,
+		color: "#52555C",
+		backgroundColor:'#FF8E66',
+		onDraw: function(el, circle) {
+			circle.text(Math.round(circle.value) + "<span style='font-size:16px;'>%<span>");
+		}
+	});
+	$("#cricleFour").circleChart({
+		size: 90,
+		value: 50,
+		text: 0,
+		color: "#52555C",
+		backgroundColor:'#FF939F',
+		onDraw: function(el, circle) {
+			circle.text(Math.round(circle.value) + "<span style='font-size:16px;'>%<span>");
+		}
+	});
+	$("#cricleFive").circleChart({
+		size: 90,
+		value: 50,
+		text: 0,
+		color: "#52555C",
+		backgroundColor:'#84FAB0',
+		onDraw: function(el, circle) {
+			circle.text(Math.round(circle.value) + "<span style='font-size:16px;'>%<span>");
+		}
+	});
+	
+	var echartsOne = echarts.init(document.getElementById('echarts1'));
+
+		var option1 = {
+				title: {
+					text: '现场人数统计',
+					left: '5%',
+					top: '20%',
+					textStyle: {
+						color: '#FFA200'
+					}
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross'
+					}
+				},
+				legend: {
+					icon:'rect',
+					orient: 'horizontal',
+					itemWidth: 10,
+					itemHeight: 10,
+					itemGap: 10,
+			        data:['A区','B区'],
+			        top:'20%',
+			        right:'5%',
+			        textStyle:{
+			        	color:'#FFFFFF'
+			        }
+			    },
+				grid: {
+					right: '5%',
+					top: '36%',
+					left: '10%',
+					bottom:'25%'
+				},
+				xAxis: {
+					name: 'X（时间）',
+					type: 'category',
+					// boundaryGap: false,
+					data: ['7:00', '9:00', '11:00', '13:00', '15:00', '17:00', '19:00'],
+					axisLine: {
+						lineStyle: {
+							color: '#0B244C'
+						}
+					},
+					axisLabel: {
+						show: true,
+						textStyle: {
+							color: '#00E4FF'
+						}
+					},
+					splitLine: {
+						show: false
+					},
+					axisTick: {       
+						show: false,
+						                   
+					},
+				},
+				yAxis: {
+					name: 'Y(次数)',
+					type: 'value',
+					axisLine: {
+						lineStyle: {
+							color: '#0B244C'
+						}
+					},
+					axisLabel: {
+						show: true,
+						textStyle: {
+							color: '#67FF9A'
+						}
+					},
+					splitLine: {
+						show: false
+					},
+					axisTick: {       
+						show: false,
+						                   
+					},
+		            min: 0,
+		            max: 100,                      
+			},
+			series: [{
+					name: 'B区',
+					data: [0, 40, 23,60,18,45,0],
+					type: 'line',
+					symbol:'circle',
+					symbolSize:false,
+					smooth: true,
+					lineStyle: {
+						color: '#00FCFF',
+						width: 0
+					},
+					itemStyle: {
+						color: '#00FCFF'
+					},
+					areaStyle: {
+						color: '#00FCFF'
+					}
+				},
+				{
+					name: 'A区',
+					data: [0,30,37,39,65,23,0],
+					type: 'line',
+					symbol:'circle',
+					symbolSize:false,
+					smooth: true,
+					lineStyle:{
+						color: '#FFA200',
+						width: 0
+					},
+					itemStyle: {
+						color: '#FFA200',
+						borderWidth: 0
+					},
+					areaStyle:false
+				}
+			]
+		};
+		echartsOne.setOption(option1);
+		setTimeout(function (){
+			window.onresize = function (res) {
+				echartsOne.resize();
+			}
+		},200)
+		
+</script>
+</html>

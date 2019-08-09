@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>人员管理</title>
+	<link href="css/header.css" type="text/css" rel="stylesheet" />
+	<link href="css/main.css" type="text/css" rel="stylesheet" />
+	<!-- <link href="css/date/jedate.css" rel="stylesheet" type="text/css"/> -->
+	<!-- <link href="css/date/jeDate-test.css" rel="stylesheet" type="text/css" /> -->
+	<style type="text/css">
+		.jedate{
+			position: absolute;
+			top: 10% !important;
+			right: 30px !important;
+			left: auto !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="main-box">
+		<div class="header-box">
+			<div class="header-left">
+				<p class="header-title">智慧工地管理平台</p>
+			</div>
+			<div class="header-right">
+				<div class="navbar-list">
+					<ul class="ul-list">
+						<li><a href="index.html">项目概况</a></li><span>/</span>
+						<li><a href="mapsite.html">工地一张图</a></li><span>/</span>
+						<li>
+							<a href="person.html" class="active-navbar">人员管理</a>
+							<img src="img/active-img.png" class="active-img" />
+						</li><span>/</span>
+						<li><a href="carNews.html">车辆管理</a></li><span>/</span>
+						<li><a href="realtimeVideo.html">现场视频</a></li><span>/</span>
+						<li><a href="towerNews.html">塔吊监测</a></li><span>/</span>
+						<li><a href="#">环境监测</a></li><span>/</span>
+						<li><a href="#">安全教育</a></li><span>/</span>
+						<li><a href="#">工地巡检</a></li><span>/</span>
+						<li><a href="#">配置管理</a></li><span>/</span>
+						<li><a href="#">BIM</a></li>
+					</ul>
+				</div>
+				<div class="date-box">
+					<div class="title-group">
+						<img src="img/tongzhi.png" id="showImg" />
+						<p class="talk-text">通知公告：</p>
+					</div>
+					<marquee behavior="scroll" direction="left" class="scroll-text">预计武汉洪山区今晚有大到暴雨，请大家做好安全防范措施，安全才能回家！这段橙色文字向左轮播滚动，多余部分不显示！</marquee>
+					<div class="user-box">
+						<div class="user-inner">
+							<img src="img/user.png" />
+							<p>admin</p>
+						</div>
+						<div class="user-inner order-user">
+							<img src="img/close.png" />
+							<p>退出</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="line-box"></div>
+		
+		<div class="person-box">
+			<img src="img/qiu3.png" class="position-img" />
+			<div class="list-left">
+				<ul class="nav-list">
+					<li class="preson-active">
+						<div class="left-line"></div>
+						<div class="navbar-inner">
+							<img src="img/active1.png" class="change-img" />
+							<p>人员管理统计</p>
+						</div>
+					</li>
+					<li>
+						<div class="left-line"></div>
+						<div class="navbar-inner">
+							<img src="img/icon2.png" class="change-img" />
+							<p>实时人员管理</p>
+						</div>
+					</li>
+					<li>
+						<div class="left-line"></div>
+						<div class="navbar-inner">
+							<img src="img/icon3.png" class="change-img" />
+							<p>现场人员展示</p>
+						</div>
+					</li>
+					<li>
+						<div class="left-line"></div>
+						<div class="navbar-inner">
+							<img src="img/icon4.png" class="change-img" />
+							<p>人员在场时间</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="iframe-box">
+				<iframe id="iframeBox" src="person-all.html"></iframe>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="js/echarts.common.min.js" type="text/javascript"></script>
+<!-- <script src="js/circleChart.min.js" type="text/javascript"></script> -->
+<!-- <script src="js/js-date/jedate.js" type="text/javascript"></script> -->
+<script type="text/javascript">
+	var navbarList = $(".nav-list li");
+	var imgList = $(".change-img");
+	var imgs = [
+		"img/icon1.png",
+		"img/icon2.png",
+		"img/icon3.png",
+		"img/icon4.png"
+	];
+	var activeImgs = [
+		"img/active1.png",
+		"img/active2.png",
+		"img/active3.png",
+		"img/active4.png",
+	];
+	var urls = [
+		"person-all.html",
+		"person-two.html",
+		"person-three.html",
+		"person-four.html",
+	];
+	var iframeBox = $("#iframeBox");
+	$(navbarList).each(function(i){
+		$(navbarList).eq(i).find("img").attr("src",imgs[i]);
+		$(navbarList).eq(0).find("img").attr("src",activeImgs[0]);
+	})
+	$(navbarList).each(function(){
+		$(this).click(function(){
+			$(this).addClass("preson-active").siblings().removeClass("preson-active");
+			var index = $(navbarList).index($(this));
+			$(iframeBox).attr("src",urls[index]);
+			$(imgList).each(function(j){
+				if(index == j){
+					$(navbarList).eq(index).find("img").attr("src",activeImgs[index]);
+				}else{
+					$(navbarList).eq(j).find("img").attr("src",imgs[j]);
+				}
+			})
+		})
+	})
+	// jeDate(".jeindiv",{
+	//     //onClose:false,
+	//     format: "YYYY-MM-DD",
+	// 	isinitVal: true
+	// });
+	var showImg = $("#showImg");
+	setInterval(function(){
+		$(showImg).hide(function(){
+			$(this).show();
+		});
+	},1000)
+</script>
+</html>

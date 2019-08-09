@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>环境监测</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+		<link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" id="styleSrc" />
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="css/dcalendar.picker.css"/>
+	<script type="text/javascript">
+		$(function(){
+			$(".mainmenu>div").click(function(){
+				$(this).addClass("mainmenuactive").siblings().removeClass("mainmenuactive");
+			})
+		})
+	</script>
+		<style type="text/css">
+			.clear {
+				clear: both;
+			}
+			
+			.content {
+				width: 100%;
+				height: 90%;
+				padding-top: 3%;
+				box-sizing: border-box;
+				min-width: 1288px;
+			}
+			
+			.right_content {
+				width: 85%;
+				height: 100%;
+				float: left;
+				padding-left: 3%;
+				padding-right: 2%;
+				box-sizing: border-box;
+			}
+			
+			.first_content {
+				width: 50%;
+				height: 40%;
+				float: left;
+				min-height: 270px;
+			}
+			.two_content{
+				width: 50%;
+				height: 40%;
+				float: left;
+				padding-left: 2%;
+				box-sizing: border-box;
+				min-height: 270px;
+			}
+			.two_content>div{
+				width: 100%;
+				height: 100%;
+				background: url(img/kuang22.png) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				padding-top: 5%;
+				box-sizing: border-box;
+			}
+			.first_content_title {
+				width: 100%;
+				height: 12%;
+			}
+			
+			.first_content_title>div:nth-child(1) {
+				float: left;
+				font-size: 20px;
+				font-family: SourceHanSansCN-Bold;
+				font-weight: bold;
+				color: rgba(0, 228, 255, 1);
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.first_content_title>div:nth-child(2) {
+				font-size: 14px;
+				font-family: SourceHanSansCN-Regular;
+				font-weight: 400;
+				float: right;
+				color: rgba(0, 228, 255, 1);
+				display: inline-block;
+				vertical-align: middle;
+			}
+			
+			.first_content_title_right p {
+				display: inline-block;
+			}
+			
+			.first_content_title_right div {
+				width: 60px;
+				height: 24px;
+				box-shadow: 0px 0px 6px 0px rgba(9, 208, 231, 1);
+				display: inline-block;
+				text-align: center;
+				line-height: 24px;
+				margin-left: 20px;
+			}
+			
+			.first_content_list {
+				width: 100%;
+				height: 90%;
+			}
+			
+			.first_content_item {
+				width: 30%;
+				height: 40%;
+				background: url(img/kuang21.png) no-repeat;
+				background-size: 100% 100%;
+				text-align: center;
+				float: left;
+				margin-right: 3.33%;
+				margin-top: 3%;
+				padding: 2% 0;
+				
+				box-sizing: border-box;
+			}
+			
+			.first_text {
+				font-size: 16px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: rgba(0, 228, 255, 1);
+			}
+			
+			.two_text {
+				font-size: 16px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: #FE5050;
+			}
+			
+			.three_text {
+				font-size: 16px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: #F5A635;
+			}
+			
+			.four_text {
+				font-size: 16px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: #35F58F;
+			}
+			
+			.five_text {
+				font-size: 16px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: #FFF568;
+			}
+			
+			.six_text {
+				font-size: 16px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: #00A0FF;
+			}
+			
+			.first_content_item span {
+				font-size: 38px;
+			}
+			
+			.first_content_item>p:nth-child(2) {
+				color: #FFFFFF;
+			}
+			.postext{
+				font-size:20px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				position: absolute;
+				left: 50%;
+				top: 0;
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+			}
+			.two_content_main{
+				width: 100%;
+				height: 100%;
+			}
+			.two_content_main_left{
+				width: 60%;
+				height: 100%;
+				float: left;
+			}
+			.twocontent_image{
+				width: 50%;
+				height: 50%;
+				padding-left: 10%;
+				box-sizing: border-box;
+			}
+			.twocontent_image img{
+				width: 100%;
+				height: auto;
+				
+			}
+			.twocontent_info{
+				width: 100%;
+				height: 50%;
+				padding-left: 10%;
+				padding-top:6%;
+				box-sizing: border-box;
+				
+			}
+			.twocontent_info>p,.twocontent_info>div{
+				display: inline-block;
+				color: #00E4FF;
+				vertical-align: middle;
+			}
+			.twocontent_info>p:nth-child(1){
+				font-size:55px;
+				font-family:ArialMT;
+				font-weight:400;
+	
+			}
+			.twocontent_info>p:nth-child(2){
+				width:2px;
+				height:60px;
+				background:rgba(0,228,255,1);
+				opacity:0.49;
+				margin: 0 10px;
+			}
+			.weather_info{
+				line-height: 25px;
+			}
+			.two_content_main_right{
+				width: 40%;
+				height: 100%;
+				float: left;
+				padding-top: 5%;
+				box-sizing: border-box;
+			}
+			.two_content_main_right>div:nth-child(1){
+				font-size:20px;
+				font-family:SourceHanSansCN-Bold;
+				font-weight:bold;
+				color:rgba(0,228,255,1);
+			}
+			.tomorrow{
+				margin-top: 12%;
+			}
+			.tomorrow>div{
+				float: left;
+			}
+			.tomorrow>div:nth-child(2){
+				margin-left: 10%;
+				color: #00E4FF;
+				font-size:16px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(0,228,255,1);
+			}
+			.evaluate{
+				width:40px;
+				height:20px;
+				background:rgba(0,215,121,1);
+				border-radius:4px;
+				color: #FFFFFF;
+				font-size:14px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(255,255,255,1);
+				text-align: center;
+				line-height: 20px;
+				margin-left: 10%;
+				margin-top: 5px;
+			}
+			.bot_content{
+				width: 100%;
+				height:50%;
+				background: url(img/kuang23.png) no-repeat;
+				background-size: 100% 100%;
+				float: left;
+				margin-top: 3%;
+				position: relative;
+				padding-left: 8%;
+				padding-top: 3%;
+				box-sizing: border-box;
+				min-height: 358px;
+			}
+			.bot_contet_top_left{
+				float: left;
+				font-size:55px;
+				font-family:ArialMT;
+				font-weight:400;
+				color:rgba(0,228,255,1);
+			}
+			.bot_contet_top_right{
+				float: left;
+				padding-top: 8px;
+				padding-left: 20px;
+			}
+			.bot_contet_top_right p:nth-child(1){
+
+				font-size:16px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(203,211,219,1);
+			}
+			.bot_contet_top_right p:nth-child(2){
+				font-size:16px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(0,215,121,1);
+				line-height: 40px;
+			}
+			.colorgroup{
+				position: absolute;
+				top: 14%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			.colorgroup_itemone>div:nth-child(1){
+				width:30px;
+				height:14px;
+				background:rgba(0,172,105,1);
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.colorgroup>div{
+				display: inline-block;
+				margin-left: 40px;
+			}
+			.colorgroup_itemtwo>div:nth-child(1){
+				width:30px;
+				height:14px;
+				background: #F5A635;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.colorgroup_itemthree>div:nth-child(1){
+				width:30px;
+				height:14px;
+				background: #72767A;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.colorgroup_itemone p,.colorgroup_itemtwo p,.colorgroup_itemthree p{
+				font-size:16px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(203,211,219,1);
+				display: inline-block;
+				vertical-align: middle;
+				margin-left: 10px;
+			}
+			
+			.calendar span{
+				margin: 5px 5px;
+				background: #00AC69 !important;
+			}
+			#mycalendar thead>tr:nth-child(1){
+				display: none;
+			}
+			#mycalendar tbody>tr:last-child{
+				display: none;
+			}
+			.calendar span{
+				padding: 3px 4px !important;
+			}
+			.calendar .pMDate span, .calendar .nMDate span{
+				background: none !important;			
+			}
+			.bot_content_main{
+				width: 100%;
+				height: 75%;
+			}
+			.bot_content_mainleft{
+				float: left;
+				width: 43%;	
+				height: 100%;
+			}
+			.bot_content_mainright{
+				float: left;
+				width: 57%;	
+				height: 100%;
+				position: relative;
+			}
+			.mainmenu{
+				
+				position: absolute;
+				top: 0;
+				left: 45%;
+				-moz-transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+				font-size:12px;
+				font-family:SourceHanSansCN-Normal;
+				font-weight:400;
+				color:rgba(101,198,231,1);
+				text-align: center;
+				z-index: 99;
+			}
+			.mainmenu>div{
+				width: 60px;
+				height: 30px;
+				border:1px solid rgba(101,198,231,1);
+				display: inline-block;
+				line-height: 30px;
+				text-align: center;
+				cursor: pointer;
+			}
+			@media (max-width: 1501px){
+				.postext{
+					font-size: 16px;
+					
+				}
+			}@media (max-width: 1301px){
+				.postext{
+					font-size: 14px;
+					
+				}
+				.first_content_item span{
+					font-size: 34px;
+				}
+			}
+			.mainmenuactive{
+				background: #65C6E7 !important;
+				color: #000000 !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main-box">
+			<div class="header-box">
+				<div class="header-left">
+					<p class="header-title">智慧工地管理平台</p>
+				</div>
+				<div class="header-right">
+					<div class="navbar-list">
+						<ul class="ul-list">
+							<li>
+								<a href="index.html">项目概况</a>
+							</li><span>/</span>
+							<li>
+								<a href="mapsite.html">工地一张图</a>
+							</li><span>/</span>
+							<li>
+								<a href="person.html">人员管理</a>
+
+							</li><span>/</span>
+							<li>
+								<a href="#">车辆管理</a>
+							</li><span>/</span>
+							<li>
+								<a href="realtimeVideo.html">现场视频</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">塔吊监测</a>
+							</li><span>/</span>
+							<li>
+								<a href="#" class="active-navbar">环境监测</a><img src="img/active-img.png" class="active-img" /></li><span>/</span>
+							<li>
+								<a href="#">安全教育</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">工地巡检</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">配置管理</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">BIM</a>
+							</li>
+						</ul>
+					</div>
+					<div class="date-box">
+						<div class="title-group">
+							<img src="img/tongzhi.png" id="showImg" />
+							<p class="talk-text">通知公告：</p>
+						</div>
+						<marquee behavior="scroll" direction="left" class="scroll-text">预计武汉洪山区今晚有大到暴雨，请大家做好安全防范措施，安全才能回家！这段橙色文字向左轮播滚动，多余部分不显示！</marquee>
+						<div class="user-box">
+							<div class="user-inner">
+								<img src="img/user.png" />
+								<p>admin</p>
+							</div>
+							<div class="user-inner order-user">
+								<img src="img/close.png" />
+								<p>退出</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="list-left">
+					<ul class="nav-list">
+						<li class="preson-active">
+							<div class="left-line"></div>
+							<div class="navbar-inner">
+								<img src="img/jiancetongji.png" class="change-img" />
+								<p>环境监测统计</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="right_content">
+					<div class="first_content">
+						<div class="first_content_title">
+							<div>实时数据展示</div>
+							<div class="first_content_title_right">
+								<p>环境监测设备SAJKSDNSAKJD</p>
+								<div>切换</div>
+
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="first_content_list">
+							<div class="first_content_item">
+								<p class="first_text"><span>13</span>ug/m³</p>
+								<p>PM2.5</p>
+							</div>
+							<div class="first_content_item">
+								<p class="two_text"><span>16</span>ug/m³</p>
+								<p>PM10</p>
+							</div>
+							<div class="first_content_item">
+								<p class="three_text"><span>36</span>℃</p>
+								<p>温度</p>
+							</div>
+							<div class="first_content_item">
+								<p class="four_text"><span>60.7</span>db</p>
+								<p>噪音</p>
+							</div>
+							<div class="first_content_item">
+								<p class="five_text"><span>30</span>m/s</p>
+								<p>北风</p>
+							</div>
+							<div class="first_content_item">
+								<p class="six_text"><span>89.7</span>%</p>
+								<p>温度</p>
+							</div>
+						</div>
+					</div>
+					<div class="two_content">
+						<div>
+							<p class="postext">考勤签到人员统计</p>
+							<div class="two_content_main">
+								<div class="two_content_main_left">
+									<div class="twocontent_image">
+										<img src="img/tianqibig.png"/>
+									</div>
+									<div class="twocontent_info">
+										<p>36°</p>
+										<p></p>
+										<div class="weather_info">
+											<p>今天 多云</p>
+											<p>27°~37°</p>
+										</div>
+									</div>
+								</div>
+								<div class="two_content_main_right">
+									<div>湖北  武汉</div>
+									<div class="tomorrow">
+										<div class="tomorrow_image">
+											<img src="img/yutian.png"/>
+										</div>
+										<div>
+											<p>明天小雨</p>
+											<p>27°~36°</p>
+											
+										</div>
+										<div class="evaluate">优</div>
+										<div class="clear"></div>
+									</div>
+									<div class="clear"></div>
+									<div class="tomorrow">
+										<div class="tomorrow_image">
+											<img src="img/qingtian.png"/>
+										</div>
+										<div>
+											<p>后天晴天</p>
+											<p>27°~36°</p>
+											
+										</div>
+										
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+					<div class="bot_content">
+						<p class="postext" style="top: -8px;">近30天环境监测情况</p>
+						<div class="colorgroup">
+							<div class="colorgroup_itemone">
+								<div></div>
+								<p>正常</p>
+							</div>
+							<div class="colorgroup_itemtwo">
+								<div></div>
+								<p>超标</p>
+							</div>
+							<div class="colorgroup_itemthree">
+								<div></div>
+								<p>无数据</p>
+							</div>
+						</div>
+						<div class="bot_contet_top">
+							<div class="bot_contet_top_left">
+								76%
+							</div>
+							<div class="bot_contet_top_right">
+								<p>环境达标率</p>
+								<p>达标天数 23</p>
+							</div>
+							
+						</div>
+						<div class="clear"></div>
+						<div class="bot_content_main">
+							<div class="bot_content_mainleft">
+								<h3></h3>
+								<table id='mycalendar' class='calendar'></table>
+							</div>
+							<div class="bot_content_mainright">
+								<div class="mainmenu" id="menu">
+									<div class="mainmenuactive">PM2.5</div>
+									<div>PM10</div>
+									<div>温度</div>
+									<div>温度</div>
+									<div>噪音</div>
+									<div>风俗</div>
+									<p class="clear"></p>
+								</div>
+								
+								<div id="echarts1" class="echarts-view" style="width: 100%;height: 100%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="js/dcalendar.picker.js"></script>
+	<script src="js/echarts.js"></script>
+	<script type="text/javascript" src="js/ion.rangeSlider.js"></script>
+	<script type="text/javascript">
+		
+			
+			$('#mycalendar').dcalendar();
+			
+			
+	
+		var echarts1 = echarts.init(document.getElementById('echarts1'));
+		var option1 = {
+			title: {
+				text: '',
+				left: '5%',
+				top: '20%',
+				textStyle: {
+					color: '#FFA200'
+				}
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'cross'
+				}
+			},
+			legend: {
+				icon: 'rect',
+				orient: 'horizontal',
+				itemWidth: 10,
+				itemHeight: 10,
+				itemGap: 10,
+				data: [],
+				top: '5%',
+				// right:'5%',
+				textStyle: {
+					color: '#FFFFFF'
+				}
+			},
+			grid: {
+				right: '10%',
+				top: '20%',
+				left: '10%',
+				bottom: '25%'
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: false,
+				data: ['7:00', '10:00', '13:00', '18:00', '21:00', '24:00'],
+				axisLine: {
+					lineStyle: {
+						color: '#0B244C'
+					}
+				},
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: '#65C6E7'
+					}
+				},
+				splitLine: {
+					show: false
+				},
+				axisTick: {   
+					show: false,
+					                   
+				},
+			},
+			yAxis: {
+				name: '',
+				nameTextStyle: {
+					color: '#65C6E7'
+				},
+				type: 'value',
+				axisLine: {
+					lineStyle: {
+						color: '#227081'
+					}
+				},
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: '#65C6E7'
+					}
+				},
+				splitLine: {
+					show: false
+				},
+				axisTick: {      
+					show: true,
+					                
+				}
+				//             min: 0,
+				//             max: 1800,
+				// splitNumber:5            
+			},
+			series: [
+				{
+					name: 'PM10',
+					data: [0, 600, 370, 590, 850, 0],
+					type: 'line',
+					symbol: 'circle',
+					symbolSize: false,
+					smooth: true,
+					lineStyle: {
+						color: '#FFA516',
+						width: 0
+					},
+					itemStyle: {
+						color: '#FFA516',
+						borderWidth: 0
+					},
+					areaStyle: false,
+					 markLine: {
+					 silent: true,
+						data: [
+						{
+							yAxis: 800,
+						},
+				],
+            label: {
+              normal: {
+                show: true,
+                position: 'middle',
+                formatter: '',
+              },
+            },
+            lineStyle: {
+              normal: {
+                type: 'solid',
+                color: '#fff',
+              },
+            },
+          },
+ 
+				}
+			]
+		};
+		echarts1.setOption(option1);
+		
+		setTimeout(() => {
+			window.onresize = function() {
+				
+				echarts1.resize();
+			}
+		}, 200)
+	
+		
+	</script>
+
+</html>

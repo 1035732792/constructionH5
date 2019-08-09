@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>车辆管理</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link href="css/date/date/jeDate-test.css" type="text/css" rel="stylesheet" />
+		<link href="css/date/jedate.css" type="text/css" rel="stylesheet" />
+		<style type="text/css">
+			.clear {
+				clear: both;
+			}
+			
+			.content {
+				width: 100%;
+				height: 90%;
+				padding-top: 2%;
+				box-sizing: border-box;
+			}
+			
+			.right_content {
+				width: 85%;
+				height: 100%;
+				float: left;
+				padding-left: 3%;
+				padding-right: 2%;
+				box-sizing: border-box;
+			}
+			
+			.content_top {
+				width: 100%;
+				height: 18%;
+				overflow: hidden;
+				min-height: 130px;
+			}
+			
+			.content_top_date {
+				width: 100%;
+				
+			}
+			
+			.content_middle {
+				width: 100%;
+				height: 35%;
+				min-height: 200px;
+			}
+			
+			.content_middle_item {
+				width: 48%;
+				height: 100%;
+				background: url(img/kuang25.png) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				padding: 2% 0;
+				box-sizing: border-box;
+				float: left;
+				margin-left: 2%;
+			}
+			
+			.postext {
+				position: absolute;
+				left: 50%;
+				-webkit-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				transform: translateX(-50%);
+				top: 0;
+				font-size: 16px;
+				font-family: SourceHanSansCN-Bold;
+				font-weight: bold;
+				color: rgba(0, 228, 255, 1);
+			}
+			
+			.content_bottom {
+				width: 100%;
+				height: 38%;
+				margin-top: 3%;
+				min-height: 250px;
+			}
+			
+			.content_bottom_item {
+				width: 48%;
+				height: 100%;
+				background: url(img/kuang25.png) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				float: left;
+				box-sizing: border-box;
+				margin-left: 2%;
+			}
+			
+			.start-img {
+				width: 10%;
+			}
+			
+			.starts-time {
+				width: 120px;
+			}
+			
+			.content_top_date>div:nth-child(1) {
+				font-size: 16px;
+				font-family: SourceHanSansCN-Medium;
+				font-weight: 500;
+				color: rgba(0, 228, 255, 1);
+				line-height: 30px;
+				float: left;
+				margin-right: 10px;
+			}
+			.content_top_leftdate{
+				width: 48%;
+				height: 100%;
+				margin-left: 2%;
+				float: left;
+			}
+			.content_top_select{
+				width: 1005;
+				margin-top: 5%;
+			}
+			.content_top_select select{
+				background: rgba(255,255,255,0.2) !important;
+				color: #FFFFFF;
+				border:1px solid rgba(255,255,255,0.2);
+				padding: 4px 0;
+				width: 100px;
+				
+			}
+			.content_top_select select option{
+				
+				color: #000;
+			}
+			.content_top_select>div:nth-child(1){
+				font-size: 16px;
+				font-family: SourceHanSansCN-Medium;
+				font-weight: 500;
+				color: rgba(0, 228, 255, 1);
+				line-height: 30px;
+				float: left;
+				margin-right: 10px;
+			}
+			.content_top_select button,.su_btns{
+				width:73px;
+				height:32px;
+				background:rgba(255,255,255,0.3);
+				color: #fff;
+				border-radius:6px;
+				margin-left: 20px;
+				border: none;
+				outline: none;
+			}
+			.top_info{
+				width: 48%;
+				height: 90%;
+				margin-left: 2%;
+				background: url(img/kuang28.png) no-repeat;
+				background-size: 100% 100%;
+				float: left;
+				padding: 30px 20px;
+				box-sizing: border-box;
+				overflow: hidden;
+			}
+			.top_info p:nth-child(1){
+				color: #FFFFFF;
+				font-size:16px;
+				font-family:SourceHanSansCN-Bold;
+				font-weight:bold;
+				float: left;
+				width: 15%;
+				margin-top: 20px;
+				min-width: 60px;
+			}
+			.top_info p:nth-child(2){
+				font-size:16px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(0,228,255,1);
+				line-height: 40px;
+				float: left;
+				width: 80%;
+			}
+			.model{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background: rgba(0,0,0,0.57);
+				z-index: 99;
+				  display: none;
+			}
+		.model_content>div{
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+			}
+			.model_content{
+				width: 40%;
+				height: 60%;
+				padding-top: 100px;
+				padding-left: 100px;
+				padding-right: 100px;
+				padding-bottom: 100px;
+				box-sizing: border-box;
+				background: url(img/kuang29.png) no-repeat;
+				background-size: 100% 100%;
+				min-width: 590px;
+				min-height: 420px;
+				
+			}
+			.model>div{
+				width: 100%;
+				height: 100%;
+				  display: -moz-box;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    display: flex;
+				 -webkit-box-orient: vertical;
+		    -webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		    flex-direction: column;
+		    -webkit-box-align: center;
+		    -webkit-align-items: center;
+		    -ms-flex-align: center;
+		    align-items: center;
+		     -webkit-box-pack: center;
+		    -webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		    justify-content: center;
+			}
+			.model_content table{
+				width: 100%;
+				height: 100%;
+				
+			}
+			
+			.model_content table td{
+				text-align: center;
+				height: 40px;
+			}
+			.first_th{
+			font-size:14px;
+			font-family:SourceHanSansCN-Normal;
+			font-weight:400;
+			color:rgba(0,204,255,1) !important;
+			background: none !important;
+			
+			}
+			.firsttd{
+				font-size:14px;
+			font-family:SourceHanSansCN-Normal;
+			font-weight:400;
+			color:rgba(142,152,186,1);
+			
+			}
+			.twotd{
+				font-size:14px;
+			font-family:SourceHanSansCN-Normal;
+			font-weight:400;
+			color:rgba(105,150,243,1);
+			
+			}
+				.threetd{
+				font-size:14px;
+			font-family:SourceHanSansCN-Normal;
+			font-weight:400;
+			color:rgba(20,198,202,1);
+			
+			}
+				.fourtd{
+				font-size:14px;
+			font-family:SourceHanSansCN-Normal;
+			font-weight:400;
+			color:rgba(142,152,186,1);
+			
+			}
+			.model_content table  tr:nth-child(even){
+  			 background:rgba(10,89,109,0.5);
+			}
+			::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+  background: hsla(0, 0%, 100%, 0.6);
+}
+ 
+::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+ 
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+ background:rgba(10,89,109,0.5);
+  transition: all .2s;
+  border-radius: .5rem;
+ 
+  &:hover {
+    background:rgba(10,89,109,0.5);
+  }
+}
+		</style>
+	</head>
+
+	<body>
+		<div class="main-box">
+			<div class="header-box">
+				<div class="header-left">
+					<p class="header-title">智慧工地管理平台</p>
+				</div>
+				<div class="header-right">
+					<div class="navbar-list">
+						<ul class="ul-list">
+							<li>
+								<a href="index.html">项目概况</a>
+							</li><span>/</span>
+							<li>
+								<a href="mapsite.html">工地一张图</a>
+							</li><span>/</span>
+							<li>
+								<a href="person.html">人员管理</a>
+
+							</li><span>/</span>
+							<li>
+								<a href="#">车辆管理</a>
+							</li><span>/</span>
+							<li>
+								<a href="realtimeVideo.html">现场视频</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">塔吊监测</a>
+							</li><span>/</span>
+							<li>
+								<a href="#" class="active-navbar">环境监测</a><img src="img/active-img.png" class="active-img" /></li><span>/</span>
+							<li>
+								<a href="#">安全教育</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">工地巡检</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">配置管理</a>
+							</li><span>/</span>
+							<li>
+								<a href="#">BIM</a>
+							</li>
+						</ul>
+					</div>
+					<div class="date-box">
+						<div class="title-group">
+							<img src="img/tongzhi.png" id="showImg" />
+							<p class="talk-text">通知公告：</p>
+						</div>
+						<marquee behavior="scroll" direction="left" class="scroll-text">预计武汉洪山区今晚有大到暴雨，请大家做好安全防范措施，安全才能回家！这段橙色文字向左轮播滚动，多余部分不显示！</marquee>
+						<div class="user-box">
+							<div class="user-inner">
+								<img src="img/user.png" />
+								<p>admin</p>
+							</div>
+							<div class="user-inner order-user">
+								<img src="img/close.png" />
+								<p>退出</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="list-left">
+					<ul class="nav-list">
+						<li class="preson-active">
+							<div class="left-line"></div>
+							<div class="navbar-inner">
+								<img src="img/carIcon.png" class="change-img" />
+								<p>实时车辆统计</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="right_content">
+					<div class="content_top">
+						<div class="content_top_leftdate">
+							<div class="content_top_date">
+								<div>时间筛选：</div>
+								<div>
+									<div class="text-search"></div>
+									<div class="starts-time">
+										<img src="img/date.png" class="start-img" />
+
+										<div class="jeitem">
+											<div class="jeinpbox">
+												<div id="jeindiv" class="jeindiv divmore start-text" placeholder="YYYY-MM-DD"></div>
+											</div>
+										</div>
+									</div>
+									<div class="center-line">--</div>
+									<div class="starts-time">
+										<img src="img/date.png" class="start-img" />
+
+										<div class="jeitem">
+											<div class="jeinpbox">
+												<div id="endTime" class="jeindiv divmore start-text" placeholder="YYYY-MM-DD"></div>
+											</div>
+										</div>
+									</div>
+									<button type="submit" class="su_btns" style="font-size: 14px;">查询</button>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="content_top_select">
+								<div>快捷查询：</div>
+								<div>
+									<select name="" id="">
+										<option value="">过去一周</option>
+										<option value="">过去一月</option>
+										<option value="">过去半年</option>
+									</select>
+									<button type="button" id="search">查询</button>
+								</div>
+								<div class="clear"></div>
+							</div>
+							
+						</div>
+						<div class="top_info">
+							<p>通知公告</p>
+							<p>宏泰国资创新港在6月违章车辆超标，为了安全化生产，应该加强整顿，请所有部门配合并相互转告....</p>
+						</div>
+					</div>
+					<div class="content_middle">
+						<div class="content_middle_item">
+							<p class="postext">违章车辆统计</p>
+							<div id="echarts1" style="width: 100%;height: 100%;"></div>
+						</div>
+						<div class="content_middle_item">
+							<p class="postext">区域统计车辆违章</p>
+							<div id="echarts2" style="width: 100%;height: 100%;"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="content_bottom">
+						<div class="content_bottom_item">
+							<p class="postext">车辆违章次数统计</p>
+							<div id="echarts3" style="width: 100%;height: 100%;"></div>
+						</div>
+						<div class="content_bottom_item">
+							<p class="postext">车辆违章统计</p>
+							<div id="echarts4" style="width: 100%;height: 100%;"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="model">
+			<div>
+				<div class="model_content">
+				<div>
+					<table cellpadding="0" cellspacing="0">
+					<tr class="first_th">
+						<td>区域</td>
+						<td>车牌好吗</td>
+						<td>进出类别</td>
+						<td>创建时间</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					<tr >
+						<td class="firsttd">宏泰国资创新港</td>
+						<td class="twotd">鄂A1524A</td>
+						<td class="threetd">进入</td>
+						<td class="fourtd">2019-05-21 19:22</td>
+					</tr>
+					
+				</table>
+				</div>
+				
+			</div>	
+			</div>
+			
+		</div>
+	</body>
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/js-date/jedate.js"></script>
+	<script src="js/echarts.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#search").click(function(){
+				$(".model").show();
+				$(".model").addClass("modelactive");
+			})
+		})
+		
+		jeDate("#jeindiv", {
+			//onClose:false,
+			format: "YYYY-MM-DD ",
+			isinitVal: true
+		});
+		jeDate("#endTime", {
+			//onClose:false,
+			format: "YYYY-MM-DD ",
+			isinitVal: true
+		});
+		var echarts1 = echarts.init(document.getElementById('echarts1'));
+		var echarts2 = echarts.init(document.getElementById('echarts2'));
+		var echarts3 = echarts.init(document.getElementById('echarts3'));
+		var echarts4 = echarts.init(document.getElementById('echarts4'));
+		var m2R2Data = [{
+				value: 335,
+				name: "车辆所属单位1",
+				itemStyle: {
+					color: "#08FFC8"
+				}
+			},
+			{
+				value: 310,
+				name: "车辆所属单位2",
+				itemStyle: {
+					color: "#56CCFF"
+				}
+			},
+			{
+				value: 234,
+				name: "车辆所属单位3",
+				itemStyle: {
+					color: "#00A0FF"
+				}
+			},
+			{
+				value: 154,
+				name: "车辆所属单位4",
+				itemStyle: {
+					color: "#FE5F55"
+				}
+			},
+			{
+				value: 335,
+				name: "车辆所属单位5",
+				itemStyle: {
+					color: "#FFF568"
+				}
+			},
+			{
+				value: 335,
+				name: "车辆所属单位6",
+				itemStyle: {
+					color: "#2BDE73"
+				}
+			},
+			{
+				value: 335,
+				name: "车辆所属单位7",
+				itemStyle: {
+					color: "#F71735"
+				}
+			},
+			{
+				value: 335,
+				name: "车辆所属单位8",
+				itemStyle: {
+					color: "#FFC952"
+				}
+			},
+		];
+		option1 = {
+			title: [{
+				// text: '标题',
+				textStyle: {
+					fontSize: 16,
+					color: "white"
+				},
+				left: "2%"
+			}, ],
+			tooltip: {
+				trigger: 'item',
+				formatter: function(parms) {
+					var str = parms.seriesName + "</br>" +
+						parms.marker + "" + parms.data.name + "</br>" +
+						"数量：" + parms.data.value + "</br>" +
+						"占比：" + parms.percent + "%";
+					return str;
+				}
+			},
+			legend: [{
+					orient: 'horizontal',
+					x: '45%',
+					y: '28%',
+					align: 'left',
+					data: ['车辆所属单位1'],
+					textStyle: {
+						color: '#08FFC8'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '28%',
+					align: 'left',
+					data: ['车辆所属单位2'],
+					textStyle: {
+						color: '#56CCFF'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '45%',
+					y: '40%',
+					align: 'left',
+					data: ['车辆所属单位3'],
+					textStyle: {
+						color: '#00A0FF'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '40%',
+					align: 'left',
+					data: ['车辆所属单位4'],
+					textStyle: {
+						color: '#FE5F55'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '45%',
+					y: '52%',
+					align: 'left',
+					data: ['车辆所属单位5'],
+					textStyle: {
+						color: '#FFF568'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '52%',
+					align: 'left',
+					data: ['车辆所属单位6'],
+					textStyle: {
+						color: '#2BDE73'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '45%',
+					y: '65%',
+					align: 'left',
+					data: ['车辆所属单位7'],
+					textStyle: {
+						color: '#F71735'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '65%',
+					align: 'left',
+					data: ['车辆所属单位8'],
+					textStyle: {
+						color: '#FFC952'
+					},
+				},
+
+			],
+			series: [{
+				name: '标题',
+				type: 'pie',
+				center: ['25%', '50%'],
+				radius: ['40%', '65%'],
+				clockwise: false, //饼图的扇区是否是顺时针排布
+				avoidLabelOverlap: false,
+				label: {
+					normal: {
+						show: false,
+					}
+				},
+				labelLine: {
+					normal: {
+						length: 5,
+						length2: 3,
+						smooth: true,
+					}
+				},
+				data: m2R2Data
+			}]
+		};
+		echarts1.setOption(option1);
+		option2 = {
+			title: [{
+				// text: '标题',
+				textStyle: {
+					fontSize: 16,
+					color: "white"
+				},
+				left: "2%"
+			}, ],
+			tooltip: {
+				trigger: 'item',
+				formatter: function(parms) {
+					var str = parms.seriesName + "</br>" +
+						parms.marker + "" + parms.data.name + "</br>" +
+						"数量：" + parms.data.value + "</br>" +
+						"占比：" + parms.percent + "%";
+					return str;
+				}
+			},
+			legend: [{
+					orient: 'horizontal',
+					x: '45%',
+					y: '28%',
+					align: 'left',
+					data: ['车辆所属单位1'],
+					textStyle: {
+						color: '#08FFC8'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '28%',
+					align: 'left',
+					data: ['车辆所属单位2'],
+					textStyle: {
+						color: '#56CCFF'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '45%',
+					y: '40%',
+					align: 'left',
+					data: ['车辆所属单位3'],
+					textStyle: {
+						color: '#00A0FF'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '40%',
+					align: 'left',
+					data: ['车辆所属单位4'],
+					textStyle: {
+						color: '#FE5F55'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '45%',
+					y: '52%',
+					align: 'left',
+					data: ['车辆所属单位5'],
+					textStyle: {
+						color: '#FFF568'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '52%',
+					align: 'left',
+					data: ['车辆所属单位6'],
+					textStyle: {
+						color: '#2BDE73'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '45%',
+					y: '65%',
+					align: 'left',
+					data: ['车辆所属单位7'],
+					textStyle: {
+						color: '#F71735'
+					}
+				},
+				{
+					orient: 'horizontal',
+					x: '68%',
+					y: '65%',
+					align: 'left',
+					data: ['车辆所属单位8'],
+					textStyle: {
+						color: '#FFC952'
+					},
+				},
+
+			],
+			series: [{
+				name: '标题',
+				type: 'pie',
+				center: ['25%', '50%'],
+				radius: ['40%', '65%'],
+				clockwise: false, //饼图的扇区是否是顺时针排布
+				avoidLabelOverlap: false,
+				label: {
+					normal: {
+						show: false,
+					}
+				},
+				labelLine: {
+					normal: {
+						length: 5,
+						length2: 3,
+						smooth: true,
+					}
+				},
+				data: m2R2Data
+			}]
+		};
+		echarts2.setOption(option2);
+		option3 = {
+			color: ['#3398DB'],
+			tooltip: {
+				// trigger: 'axis',
+				// axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+				//     type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+				// }
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '10%',
+				containLabel: true
+			},
+			xAxis: [{
+				type: 'category',
+				data: ['车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1', '车牌号1'],
+				axisTick: {
+					alignWithLabel: false
+				},
+				axisLine: {
+					lineStyle: {
+						color: '#65C6E7'
+					}
+				},
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: '#65C6E7'
+					},
+					formatter: function(value) {
+						return value.split("").join("\n");
+					}
+				},
+				splitLine: {
+					show: false
+				},
+				axisTick: { 
+					show: false,
+					                
+				}
+				// splitArea:{
+				// 	show:true,
+				// 	areaStyle:{
+				// 		color:'#227081',
+				// 	}
+				// } 
+			}],
+			yAxis: [{
+				name: '时长/小时',
+				type: 'value',
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: '#65C6E7'
+					}
+				},
+				axisLine: {
+					lineStyle: {
+						color: '#65C6E7'
+					}
+				},
+				splitLine: {
+					show: false
+				},
+				axisTick: { 
+					show: false,
+					                
+				} 
+			}],
+			series: [{
+				name: '时长',
+				type: 'bar',
+				barWidth: '60%',
+				data: [6.5, 5.8, 4.8, 6, 7.3, 8.2, 7.5, 6.9, 4.5, 3.5, 6.5],
+				itemStyle: {
+					normal: {
+						color: '#16B3E0'
+					}
+				}
+			}]
+		};
+		echarts3.setOption(option3);
+
+		var option4 = {
+			title: {
+				text: '',
+				left: '5%',
+				top: '20%',
+				textStyle: {
+					color: '#FFA200'
+				}
+			},
+			tooltip: {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'cross'
+				}
+			},
+			legend: {
+				icon: 'rect',
+				orient: 'horizontal',
+				itemWidth: 10,
+				itemHeight: 10,
+				itemGap: 10,
+				data: [],
+				top: '5%',
+				// right:'5%',
+				textStyle: {
+					color: '#FFFFFF'
+				}
+			},
+			grid: {
+				right: '10%',
+				top: '20%',
+				left: '10%',
+				bottom: '25%'
+			},
+			xAxis: {
+				type: 'category',
+				boundaryGap: false,
+				data: ['7:00', '10:00', '13:00', '18:00', '21:00', '24:00'],
+				axisLine: {
+					lineStyle: {
+						color: '#0B244C'
+					}
+				},
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: '#65C6E7'
+					}
+				},
+				splitLine: {
+					show: false
+				},
+				axisTick: {   
+					show: false,
+					                   
+				},
+			},
+			yAxis: {
+				name: '',
+				nameTextStyle: {
+					color: '#65C6E7'
+				},
+				type: 'value',
+				axisLine: {
+					lineStyle: {
+						color: '#227081'
+					}
+				},
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: '#65C6E7'
+					}
+				},
+				splitLine: {
+					show: false
+				},
+				axisTick: {      
+					show: true,
+					                
+				}
+				//             min: 0,
+				//             max: 1800,
+				// splitNumber:5            
+			},
+			series: [{
+				name: 'PM10',
+				data: [0, 600, 370, 590, 850, 0],
+				type: 'line',
+				symbol: 'circle',
+				symbolSize: false,
+				smooth: true,
+				lineStyle: {
+					color: '#0FCFC2',
+					width: 0
+				},
+				itemStyle: {
+					color: '#0FCFC2',
+					borderWidth: 0
+				},
+				areaStyle: false,
+				markLine: {
+					data: [
+						[{
+								name: '',
+								xAxis: 0,
+								yAxis: 300,
+								symbol: 'circle'
+							},
+							{
+								name: '',
+								xAxis: '0',
+								yAxis: 800,
+								symbol: 'circle'
+							},
+						],
+					],
+					label: {
+						normal: {
+							show: true,
+							position: 'middle',
+							formatter: '',
+						},
+					},
+					lineStyle: {
+						normal: {
+							type: 'solid',
+							color: '#fff',
+						},
+					},
+				},
+
+			}]
+		};
+		echarts4.setOption(option4);
+
+		setTimeout(function() {
+			window.onresize = function(res) {
+				echarts1.resize();
+				echarts2.resize();
+				echarts3.resize();
+				echarts4.resize();
+			}
+		}, 200)
+	</script>
+
+</html>

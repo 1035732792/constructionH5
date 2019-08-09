@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>环境监测</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" href="css/header.css" />
+	<link href="css/date/jeDate-test.css"  type="text/css" rel="stylesheet"  />
+	<link href="css/date/jedate.css" type="text/css" rel="stylesheet" />
+	<style type="text/css">
+		.jeitem{
+			margin-left: 5%;
+		}
+		.jeindiv{
+			padding-left: 0px;
+		}
+		.jeinpbox{
+			width: 95%;
+			margin-right: 0px;
+		}
+		.list-left{
+			padding-top: 1%;
+			box-sizing: border-box;
+		}
+		.content {
+			width: 100%;
+			height:87%;
+			box-sizing: border-box;
+		}
+		.right_content {
+			width: 85%;
+			height: 100%;
+			float: left;
+			padding-left: 2%;
+			padding-right: 2%;
+			box-sizing: border-box;
+		}
+		.top-date{
+			width: 100%;
+			height: 6%;
+		}
+		.chooes-date{
+			width: 50%;
+			height: auto;
+			margin-top: 2%;
+			float: left;
+		}
+		.chooes-inner{
+			width: 100%;
+			margin: 0;
+		}
+		.chooes-inner .text-search{
+			width: 17%;
+			color: #00E4FF;
+			font-weight: 500;
+		}
+		.chooes-inner .starts-time{
+			width: 27%;
+		}
+		.right-date{
+			width: 50%;
+			height: auto;
+			float: right;
+		}
+		.select-list{
+			width: 27%;
+			height: 100%;
+			float: left;
+			border-radius:6px;
+		}
+		.select-view{
+			width: 100%;
+			height: 100%;
+			border-radius:6px;
+			border: none;
+			background-color:rgba(255,255,255,0.2);
+			outline: none;
+			color: #FFFFFF;
+			padding-left: 30%;
+		}
+		.select-view option{
+			color: #000000;
+		}
+		.top-echarts-news{
+			width: 100%;
+			height:41%;
+			margin-top: 2%;
+		}
+		.left-echarts{
+			width: 49%;
+			height: 100%;
+			float: left;
+			background-image: url(img/k1.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.right-echarts{
+			width: 49%;
+			height: 100%;
+			float: right;
+			background-image: url(img/k1.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.echarts-box{
+			width: 100%;
+			height: 100%;
+		}
+		.good-day{
+			color: #FFFFFF;
+			position: absolute;
+			top: 53%;
+			left:9%;
+			font-size: 14px;
+		}
+		.err-day{
+			color: #FFFFFF;
+			position: absolute;
+			top: 58%;
+			right:8%;
+			font-size: 14px;
+		}
+		.bottom-list{
+			width: 100%;
+			height:42%;
+			margin-top: 2%;
+			background-image: url(img/rightBg1.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.inner-list-box{
+			width: 95%;
+			height: 100%;
+			padding-top:2%;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+		.title-boxs{
+			width: 100%;
+			height: 15%;
+		}
+		.title-boxs div{
+			height: 100%;
+			float: left;
+			color: #00CCFF;
+			text-align: center;
+			line-height: 40px;
+			vertical-align: middle;
+		}
+		.time-box{
+			width: 16%;
+		}
+		.order-width{
+			width: 12%;
+		}
+		.inner-lists{
+			width: 100%;
+			height:84%;
+		}
+		.car-list{
+			padding: 0px;
+			overflow-y: scroll;
+		}
+		.car-list::-webkit-scrollbar{
+			width:8px;
+			background:rgba(0,204,204,0.4);
+		}
+		.car-list::-webkit-scrollbar-thumb{
+			width:8px;
+			background:rgba(0,204,204,0.2);
+		}
+		.car-list li div{
+			text-align: center;
+			line-height: 40px;
+			float: left;
+			color: #8E98BA;
+			position: relative;
+		}
+		.car-list li:nth-child(even){
+			height: 50px;
+		}
+		.car-list li:nth-child(even) div{
+			line-height: 50px;
+		}
+		.active-color{
+			color: #FFA200 !important;
+		}
+		.active-title{
+			position:absolute;
+			top: 50%;
+			left: 65%;
+			-webkit-transform: translateY(-50%) rotate(-180deg);
+			-moz-transform: translateY(-50%) rotate(-180deg);
+			-ms-transform: translateY(-50%) rotate(-180deg);
+			-o-transform: translateY(-50%) rotate(-180deg);
+			transform: translateY(-50%) rotate(-180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="main-box">
+		<div class="header-box">
+			<div class="header-left">
+				<p class="header-title">智慧工地管理平台</p>
+			</div>
+			<div class="header-right">
+				<div class="navbar-list">
+					<ul class="ul-list">
+						<li>
+							<a href="index.html">项目概况</a>
+						</li><span>/</span>
+						<li>
+							<a href="mapsite.html">工地一张图</a>
+						</li><span>/</span>
+						<li>
+							<a href="person.html">人员管理</a>
+		
+						</li><span>/</span>
+						<li>
+							<a href="carNews.html">车辆管理</a>
+						</li><span>/</span>
+						<li>
+							<a href="realtimeVideo.html">现场视频</a>
+						</li><span>/</span>
+						<li>
+							<a href="#">塔吊监测</a>
+						</li><span>/</span>
+						<li>
+							<a href="#" class="active-navbar">环境监测</a><img src="img/active-img.png" class="active-img" /></li><span>/</span>
+						<li>
+							<a href="#">安全教育</a>
+						</li><span>/</span>
+						<li>
+							<a href="#">工地巡检</a>
+						</li><span>/</span>
+						<li>
+							<a href="#">配置管理</a>
+						</li><span>/</span>
+						<li>
+							<a href="#">BIM</a>
+						</li>
+					</ul>
+				</div>
+				<div class="date-box">
+					<div class="title-group">
+						<img src="img/tongzhi.png" id="showImg" />
+						<p class="talk-text">通知公告：</p>
+					</div>
+					<marquee behavior="scroll" direction="left" class="scroll-text">预计武汉洪山区今晚有大到暴雨，请大家做好安全防范措施，安全才能回家！这段橙色文字向左轮播滚动，多余部分不显示！</marquee>
+					<div class="user-box">
+						<div class="user-inner">
+							<img src="img/user.png" />
+							<p>admin</p>
+						</div>
+						<div class="user-inner order-user">
+							<img src="img/close.png" />
+							<p>退出</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="line-box"></div>
+		<div class="content">
+			<div class="list-left">
+				<ul class="nav-list">
+					<li class="preson-active">
+						<div class="left-line"></div>
+						<div class="navbar-inner">
+							<img src="img/huanjing.png" class="change-img" />
+							<p>环境监测统计</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="right_content">
+				<div class="top-date">
+					<div class="chooes-date" style="margin-top: 0;width: 45%;">
+						<div class="chooes-inner">
+							<div class="text-search">日期检索：</div>
+							<div class="starts-time">
+								<img src="img/date.png" class="start-img" />
+								<div class="jeitem">
+									<div class="jeinpbox"><div id="jeindiv" class="jeindiv divmore start-text" placeholder="YYYY-MM-DD" ></div></div>
+								</div>
+							</div>
+							<div class="center-line">--</div>
+							<div class="starts-time">
+								<img src="img/date.png" class="start-img" />
+								<div class="jeitem">
+									<div class="jeinpbox"><div id="endTime" class="jeindiv divmore start-text" placeholder="YYYY-MM-DD" ></div></div>
+								</div>
+							</div>
+							<button type="submit" class="search-btns search-txt">搜索</button>
+						</div>
+					</div>
+					<div class="right-date">
+						<div class="chooes-inner">
+							<div class="text-search">快捷查询：</div>
+							<div class="select-list">
+								<select  class="select-view">
+									<option value="">过去一周</option>
+									<option value="">过去一周</option>
+									<option value="">过去一周</option>
+								</select>
+							</div>
+							<button type="submit" class="search-btns search-txt">搜索</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="top-echarts-news">
+					<div class="left-echarts">
+						<p class="mis-box-text">环境超标柱状图</p>
+						<div class="echarts-box">
+							<div id="echartsOne" class="echarts-view"></div>
+						</div>
+					</div>
+					<div class="right-echarts">
+						<p class="mis-box-text">环境超标饼状图</p>
+						<div class="echarts-box">
+							<div id="echartsTwo" class="echarts-view"></div>
+							<p class="good-day">环境正常天数 ：250天</p>
+							<p class="err-day">环境异常天数 ：250天</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="bottom-list">
+					<p class="mis-box-text" style="top: -20px;">环境超标的数据统计</p>
+					<div class="inner-list-box">
+						<div class="title-boxs">
+							<div class="time-box">时间</div>
+							<div class="order-width">温度</div>
+							<div class="order-width">湿度</div>
+							<div class="order-width">PM2.5</div>
+							<div class="order-width">PM10</div>
+							<div class="order-width">噪音</div>
+							<div class="order-width">风速</div>
+							<div class="order-width">风向</div>
+						</div>
+						<div class="inner-lists">
+							<ul class="car-list">
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width">33</div>
+									<div class="order-width">86</div>
+									<div class="order-width">12.5</div>
+									<div class="order-width">51.7</div>
+									<div class="order-width">35</div>
+									<div class="order-width">2</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width active-color">
+										38
+										<img src="img/xia1.png" class="active-title" />
+									</div>
+									<div class="order-width">86</div>
+									<div class="order-width">12.5</div>
+									<div class="order-width active-color">
+										51.7
+										<img src="img/xia1.png" class="active-title" />
+									</div>
+									<div class="order-width">35</div>
+									<div class="order-width">2</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width">33</div>
+									<div class="order-width">86</div>
+									<div class="order-width active-color">
+										12.5
+										<img src="img/xia1.png" class="active-title" />
+									</div>
+									<div class="order-width">51.7</div>
+									<div class="order-width">35</div>
+									<div class="order-width active-color">
+										8
+										<img src="img/xia1.png" class="active-title" />
+									</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width">33</div>
+									<div class="order-width active-color">
+										86
+										<img src="img/xia1.png" class="active-title" />
+									</div>
+									<div class="order-width">12.5</div>
+									<div class="order-width">51.7</div>
+									<div class="order-width">35</div>
+									<div class="order-width">2</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width">33</div>
+									<div class="order-width">86</div>
+									<div class="order-width">12.5</div>
+									<div class="order-width">51.7</div>
+									<div class="order-width">35</div>
+									<div class="order-width">2</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width">33</div>
+									<div class="order-width">86</div>
+									<div class="order-width">12.5</div>
+									<div class="order-width">51.7</div>
+									<div class="order-width">35</div>
+									<div class="order-width">2</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+								<li>
+									<div class="time-box">2019-07-12    10:36:23</div>
+									<div class="order-width">33</div>
+									<div class="order-width">86</div>
+									<div class="order-width">12.5</div>
+									<div class="order-width">51.7</div>
+									<div class="order-width">35</div>
+									<div class="order-width">2</div>
+									<div class="order-width">西北偏南</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="js/echarts.common.min.js" type="text/javascript"></script>
+<script src="js/js-date/jedate.js" type="text/javascript"></script>
+<script type="text/javascript">
+	jeDate("#jeindiv",{
+	    //onClose:false,
+	    format: "YYYY-MM-DD hh:mm",
+		isinitVal: true
+	});
+	jeDate("#endTime",{
+	    //onClose:false,
+	    format: "YYYY-MM-DD hh:mm",
+		isinitVal: true
+	});
+	
+	var myChart = echarts.init(document.getElementById('echartsOne'));
+       var option1 = {
+        	tooltip : {
+        		// trigger: 'axis',
+        		// axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+        		//     type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        		// }
+        	},
+        	grid: {
+				top:'20%',
+        		left: '8%',
+        		right: '5%',
+        		bottom: '10%',
+        	},
+        	xAxis : [
+        		{
+					show:false,
+        			type : 'category',
+        			data : ['温度', '湿度', 'PM2.5', 'PM10', '噪音', '风速'],
+        			axisTick: {
+        				alignWithLabel: false
+        			},
+        			axisLine: {
+        				lineStyle: {
+        					color: '#65C6E7'
+        				}
+        			},
+        			axisLabel: {
+        				show: true,
+        				textStyle: {
+        					color: '#65C6E7'
+        				}
+        			},
+        			splitLine: {
+        				show: false
+        			},
+        			axisTick: { 
+        				show: false,                
+        			}
+        		}
+        	],
+        	yAxis : [
+        		{
+					name:'超标天数',
+        			type : 'value',
+        			axisLabel: {
+        				show: true,
+        				textStyle: {
+        					color: '#65C6E7'
+        				}
+        			},
+        			axisLine: {
+        				lineStyle: {
+        					color: '#65C6E7'
+        				}
+        			},
+        			splitLine: {
+        				show: true,
+						lineStyle: {
+							color: '#0B244C'
+						}
+        			},
+        			axisTick: { 
+        				show: false,                
+        			} 
+        		}
+        	],
+        	series : [
+        		{
+        			type:'bar',
+        			barWidth: '40%',
+        			data:[6.5, 5.8, 4.8, 6, 7.3, 8.2],
+        			itemStyle:{
+        				normal:{
+        					color:function(params){
+								var colorList = ['#FF3B3B','#FFBA00','#41FFB5','#41A0FF','#00E4FF','#EC64FC']
+								return colorList[params.dataIndex];
+							},
+							label:{
+								show:true,
+								position:'top',
+								formatter:'{b}',
+								textStyle:{
+									color:'#FFFFFF'
+								}
+							}
+        				}
+        			}
+        		}
+        	]
+        };
+         myChart.setOption(option1);
+		 
+		 
+		 var echarts2 = echarts.init(document.getElementById('echartsTwo'));
+		 	var m2R2Data= [
+		 	   {value:335,name:"环境异常天数占比",itemStyle:{color:"#FFBA00"}},
+		 	   {value:310,name:"环境正常天数占比",itemStyle:{color:"#41A0FF"}},
+		 	];
+		 	var option5 = {
+		 		title: [
+		 		{
+		 			// text: '标题',
+		 			textStyle: {
+		 				fontSize: 16,
+		 				color: "white"
+		 			},
+		 			left: "2%"
+		 		},    
+		 		],
+		 		tooltip: {
+		 			trigger: 'item',
+		 			formatter:function (parms){
+		 			  var str=  parms.seriesName+"</br>"+
+		 				parms.marker+""+parms.data.name+"</br>"+
+		 				"数量："+ parms.data.value+"</br>"+
+		 				"占比："+ parms.percent+"%";
+		 				return  str ;
+		 			},
+		 		},
+		 		series: [
+		 			{
+		 				name:'',
+		 				type:'pie',
+		 				center: ['50%', '50%'],
+		 				radius: ['40%', '65%'],
+						startAngle:90,
+		 				// avoidLabelOverlap: false,
+		 				label: {
+		 					normal: {
+		 						show:true,
+								textStyle:{
+									fontSize:'14'
+								}
+		 					},
+							
+		 				},
+		 				labelLine: {
+		 					normal: {
+		 					  length:35,
+		 					  length2:35,
+		 					  smooth:0.3,
+		 					}
+		 				},
+		 				data:m2R2Data
+		 			}
+		 		]
+		 	};
+		 echarts2.setOption(option5);
+		 setTimeout(() => {
+		 	window.onresize = function() {
+		 		myChart.resize();
+				echarts2.resize();
+		 	}
+		 }, 200)
+</script>
+</html>

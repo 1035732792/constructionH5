@@ -1,0 +1,618 @@
+<link href="css/main.css" type="text/css" rel="stylesheet" />
+<div class="iframe-one">
+	<div class="left-allNews">
+		<div class="name-top">
+			<div class="name-box">
+				<p class="person-all">在场人员统计</p>
+				<p class="has-all">到场率 36.61%</p>
+			</div>
+			<div class="num-boxs">
+				<div class="num-boxOne">
+					<div class="inner-num">
+						<p class="person-num">1.234<span>人</span></p>
+						<p class="title-text">当前到场人员数</p>
+					</div>
+				</div>
+				<div class="num-boxOne">
+					<div class="inner-num">
+						<p class="person-num">2.136<span>人</span></p>
+						<p class="title-text">工地人员总数</p>
+					</div>
+				</div>
+				<div class="num-boxOne">
+					<div class="inner-num">
+						<p class="person-num">1.422<span>人</span></p>
+						<p class="title-text">近一周日均到场数</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="data-box">
+			<p class="mis-box-text car-title door-data">各门禁进出场数据</p>
+			<div class="guard-box">
+				<div class="guard-inner">
+					<p class="door-name">门禁设备SAJKSDNSAKJD</p>
+					<button class="change-bth">切换</button>
+				</div>
+				<div class="time-chooes">
+					<ul class="date-list">
+						<li class="time-chooes-active">日</li>
+						<li>周</li>
+						<li>月</li>
+					</ul>
+				</div>
+			</div>
+			<div class="echarts-two">
+				<div id="echarts2" class="echarts-view"></div>
+			</div>
+			<div class="person-detail">
+				<ul class="car-list">
+					<li>
+						<div class="address">
+							<p>张三三</p>
+						</div>
+						<div class="type">
+							<p class="car-num">管理人员</p>
+						</div>
+						<div class="type">
+							<p class="join-color">进入</p>
+						</div>
+						<div class="address">
+							<p>2019-05-21 19:22</p>
+						</div>
+					</li>
+					<li>
+						<div class="address">
+							<p>李四四</p>
+						</div>
+						<div class="type">
+							<p class="car-num">建筑工</p>
+						</div>
+						<div class="type">
+							<p class="join-color">进场</p>
+						</div>
+						<div class="address">
+							<p>2019-05-21 19:22</p>
+						</div>
+					</li>
+					<li>
+						<div class="address">
+							<p>王五五</p>
+						</div>
+						<div class="type">
+							<p class="car-num">架子工</p>
+						</div>
+						<div class="type">
+							<p class="join-color join-out">出场</p>
+						</div>
+						<div class="address">
+							<p>2019-05-21 19:22</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right-allNews">
+		<div class="search-person">
+			<p class="mis-box-text car-title door-data">考勤签到人员统计</p>
+			<div class="more-cricle">
+				<div id="cricleEcharts" class="echarts-view"></div>
+				<ul class="data-list">
+					<li>人员总数<span>2136</span></li>
+					<li>当前已签到<span>752</span></li>
+					<li>当前未签到<span>1384</span></li>
+				</ul>
+			</div>
+			<div class="work-detail">
+				<div class="inner-work">
+					<div class="work-one">
+						<div class="work-list">
+							<div class="work-box">45%</div>
+							<p class="day-text">今日签到率</p>
+							<div class="work-time">
+								<p class="week-text">周</p>
+								<p class="work-num">20%</p>
+								<img src="img/xia1.png" class="work-img" />
+							</div>
+							<div class="work-time">
+								<p class="week-text">月</p>
+								<p class="work-num work-two">20%</p>
+								<img src="img/shang1.png" class="work-img" />
+							</div>
+						</div>
+						<div class="work-list">
+							<div class="work-box">123</div>
+							<p class="day-text">迟到人数</p>
+							<div class="work-time">
+								<p class="week-text">周</p>
+								<p class="work-num no-num">--</p>
+								<!-- <img src="img/xia1.png" class="work-img" /> -->
+							</div>
+							<div class="work-time">
+								<p class="week-text">月</p>
+								<p class="work-num work-two">20%</p>
+								<img src="img/shang1.png" class="work-img" />
+							</div>
+						</div>
+						<div class="work-list">
+							<div class="work-box">7</div>
+							<p class="day-text">旷工人数</p>
+							<div class="work-time">
+								<p class="week-text">周</p>
+								<p class="work-num">20%</p>
+								<img src="img/xia1.png" class="work-img" />
+							</div>
+							<div class="work-time">
+								<p class="week-text">月</p>
+								<p class="work-num work-two">20%</p>
+								<img src="img/shang1.png" class="work-img" />
+							</div>
+						</div>
+					</div>
+					
+					<div class="work-order">
+						<div class="work-list">
+							<div class="work-box">123</div>
+							<p class="day-text">已到场人数</p>
+							<div class="work-time">
+								<p class="week-text">周</p>
+								<p class="work-num">20%</p>
+								<img src="img/xia1.png" class="work-img" />
+							</div>
+							<div class="work-time">
+								<p class="week-text">月</p>
+								<p class="work-num work-two">20%</p>
+								<img src="img/shang1.png" class="work-img" />
+							</div>
+						</div>
+						<div class="work-list">
+							<div class="work-box">123</div>
+							<p class="day-text">早退人数</p>
+							<div class="work-time">
+								<p class="week-text">周</p>
+								<p class="work-num">20%</p>
+								<img src="img/xia1.png" class="work-img" />
+							</div>
+							<div class="work-time">
+								<p class="week-text">月</p>
+								<p class="work-num work-two">20%</p>
+								<img src="img/shang1.png" class="work-img" />
+							</div>
+						</div>
+						<div class="work-list">
+							<div class="work-box">123</div>
+							<p class="day-text">未打卡人数</p>
+							<div class="work-time">
+								<p class="week-text">周</p>
+								<p class="work-num no-num">--</p>
+								<!-- <img src="img/xia1.png" class="work-img" /> -->
+							</div>
+							<div class="work-time">
+								<p class="week-text">月</p>
+								<p class="work-num work-two">20%</p>
+								<img src="img/shang1.png" class="work-img" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="time-around">
+			<p class="mis-box-text car-title door-data">考勤签到时间分布</p>
+			<div class="guard-box">
+				<div class="guard-inner">
+					<p class="door-name">管理人员</p>
+					<button class="change-bth">切换</button>
+				</div>
+				<div class="time-chooes">
+					<ul class="date-list">
+						<li class="time-chooes-active">日</li>
+						<li>周</li>
+						<li>月</li>
+					</ul>
+				</div>
+			</div>
+			<div class="echarts-three">
+				<div id="echarts3" class="echarts-view"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="js/echarts.common.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var lists = $(".date-list li");
+	$(lists).each(function(){
+		$(this).click(function(){
+			$(this).addClass("time-chooes-active").siblings().removeClass("time-chooes-active");
+		})
+	})
+	
+	var echartsTwo = echarts.init(document.getElementById('echarts2'));
+		var option2 = {
+				title: {
+					text: '',
+					left: '5%',
+					top: '20%',
+					textStyle: {
+						color: '#FFA200'
+					}
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross'
+					}
+				},
+				legend: {
+					icon:'rect',
+					orient: 'horizontal',
+					itemWidth: 10,
+					itemHeight: 10,
+					itemGap: 10,
+			        data:['人员出场','人员进场'],
+			        top:'5%',
+			        // right:'5%',
+			        textStyle:{
+			        	color:'#FFFFFF'
+			        }
+			    },
+				grid: {
+					right: '10%',
+					top: '20%',
+					left: '10%',
+					bottom:'25%'
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: ['7:00', '10:00', '13:00', '18:00', '21:00', '24:00'],
+					axisLine: {
+						lineStyle: {
+							color: '#0B244C'
+						}
+					},
+					axisLabel: {
+						show: true,
+						textStyle: {
+							color: '#65C6E7'
+						}
+					},
+					splitLine: {
+						show: false
+					},
+					axisTick: {   
+						show: false,
+						                   
+					},
+				},
+				yAxis: {
+					name: '单位/人',
+					nameTextStyle:{
+						color: '#65C6E7'
+					},
+					type: 'value',
+					axisLine: {
+						lineStyle: {
+							color: '#227081'
+						}
+					},
+					axisLabel: {
+						show: true,
+						textStyle: {
+							color: '#65C6E7'
+						}
+					},
+					splitLine: {
+						show: false
+					},
+					axisTick: {      
+						show: false,                
+					}
+		//             min: 0,
+		//             max: 1800,
+					// splitNumber:5            
+			},
+			series: [{
+					name: '人员进场',
+					data: [0, 400, 230,600,180,0],
+					type: 'line',
+					symbol:'circle',
+					symbolSize:false,
+					smooth: true,
+					lineStyle: {
+						color: '#42EAF5',
+						width: 0
+					},
+					itemStyle: {
+						color: '#42EAF5'
+					},
+					areaStyle: {
+						color: '#42EAF5'
+					}
+				},
+				{
+					name: '人员出场',
+					data: [0,300,370,390,650,0],
+					type: 'line',
+					symbol:'circle',
+					symbolSize:false,
+					smooth: true,
+					lineStyle:{
+						color: '#FF6B11',
+						width: 0
+					},
+					itemStyle: {
+						color: '#FF6B11',
+						borderWidth: 0
+					},
+					areaStyle:false
+				}
+			]
+		};
+		echartsTwo.setOption(option2);
+		
+		
+	var echartsThree = echarts.init(document.getElementById('cricleEcharts'));
+	data = [{
+			name: "人员总数",
+			value: 2136
+		},
+		{
+			name: "当前已签到",
+			value: 752
+		},
+		{
+			name: "当前未签到",
+			value: 1384
+		},
+	];
+	arrName = getArrayValue(data, "name");
+	arrValue = getArrayValue(data, "value");
+	sumValue = eval(arrValue.join('+'));
+	objData = array2obj(data, "name");
+	optionData = getData(data);
+	function getArrayValue(array, key) {
+		var key = key || "value";
+		var res = [];
+		if (array) {
+			array.forEach(function(t) {
+				res.push(t[key]);
+			});
+		}
+		return res;
+	}
+
+	function array2obj(array,key) {
+		var resObj = {};
+		for(var i=0;i<array.length;i++){
+			resObj[array[i][key]] = array[i];
+		}
+		return resObj;
+	}
+
+	function getData(data) {
+		var res = {
+			series: [],
+			yAxis: []
+		};
+		for (let i = 0; i < data.length; i++) {
+			res.series.push({
+				name: '今日人员统计',
+				type: 'pie',
+				clockWise: true, //顺时加载
+				hoverAnimation: false, //鼠标移入变大
+				radius: [65 - i * 15 + '%', 57 - i * 15 + '%'],
+				center: ["60%", "50%"],
+				label: {
+					show: false
+				},
+				itemStyle: {
+					label: {
+						show: false,
+					},
+					labelLine: {
+						show: false
+					},
+					borderWidth: 5,
+				},
+				data: [{
+					value: data[i].value,
+					name: data[i].name
+				}, {
+					value: sumValue - data[i].value,
+					name: '',
+					itemStyle: {
+						color: "rgba(0,0,0,0)",
+						borderWidth: 0
+					},
+					tooltip: {
+						show: false
+					},
+					hoverAnimation: false
+				}]
+			});
+			res.series.push({
+				name: '',
+				type: 'pie',
+				silent: true,
+				z: 1,
+				clockWise: true, //顺时加载
+				hoverAnimation: false, //鼠标移入变大
+				radius: [65 - i * 15 + '%', 57 - i * 15 + '%'],
+				center: ["60%", "50%"],
+				label: {
+					show: false
+				},
+				itemStyle: {
+					label: {
+						show: false,
+					},
+					labelLine: {
+						show: false
+					},
+					borderWidth: 5,
+				},
+				data: [{
+					value: 7.5,
+					itemStyle: {
+						color: "#00040F",
+						borderWidth: 0
+					},
+					tooltip: {
+						show: false
+					},
+					hoverAnimation: false
+				}, {
+					value: 2.5,
+					name: '',
+					itemStyle: {
+						color: "rgba(0,0,0,0)",
+						borderWidth: 0
+					},
+					tooltip: {
+						show: false
+					},
+					hoverAnimation: false
+				}]
+			});
+			res.yAxis.push((data[i].value / sumValue * 100).toFixed(2) + "%");
+		}
+		return res;
+	}
+
+	option3 = {
+		color: ['#2782CD', '#FCA100', '#FD3F19'],
+		grid: {
+			top: '20%',
+			left:'40%',
+			bottom: '48%',
+			containLabel: true
+		},
+		title:{
+			 text: '今日人员统计',
+			 textStyle: {
+				 color: '#FFFFFF',
+				 fontSize:12,
+			 },
+			 x:"center",
+			 y:"center"
+		},
+		series: optionData.series
+	};
+	echartsThree.setOption(option3);
+	
+	var echartsFour = echarts.init(document.getElementById('echarts3'));
+		var option4 = {
+				title: {
+					text: '',
+					left: '5%',
+					top: '20%',
+					textStyle: {
+						color: '#FFA200'
+					}
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross'
+					}
+				},
+				// legend: {
+				// 	icon:'rect',
+				// 	orient: 'horizontal',
+				// 	itemWidth: 10,
+				// 	itemHeight: 10,
+				// 	itemGap: 10,
+			 //        data:['人员出场','人员进场'],
+			 //        top:'5%',
+			 //        // right:'5%',
+			 //        textStyle:{
+			 //        	color:'#FFFFFF'
+			 //        }
+			 //    },
+				grid: {
+					right: '10%',
+					top: '20%',
+					left: '10%',
+					bottom:'12%'
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: ['7:00', '10:00', '13:00', '18:00', '21:00', '24:00'],
+					axisLine: {
+						lineStyle: {
+							color: '#0B244C'
+						}
+					},
+					axisLabel: {
+						show: true,
+						textStyle: {
+							color: '#65C6E7'
+						}
+					},
+					splitLine: {
+						show: false
+					},
+					axisTick: {   
+						show: false,
+						                   
+					},
+				},
+				yAxis: {
+					name: '单位/人',
+					nameTextStyle:{
+						color: '#65C6E7'
+					},
+					type: 'value',
+					axisLine: {
+						lineStyle: {
+							color: '#227081'
+						}
+					},
+					axisLabel: {
+						show: true,
+						textStyle: {
+							color: '#65C6E7'
+						}
+					},
+					splitLine: {
+						show: false
+					},
+					axisTick: {      
+						show: false,                
+					}          
+			},
+			series: [{
+					name: '人员进场',
+					data: [0, 400, 230,600,180,0],
+					type: 'line',
+					symbol:'circle',
+					symbolSize:false,
+					smooth: true,
+					lineStyle: {
+						color: '#42EAF5',
+						width: 0
+					},
+					itemStyle: {
+						color: '#42EAF5'
+					},
+					areaStyle: {
+						color: '#42EAF5'
+					}
+				}
+			]
+		};
+		echartsFour.setOption(option4);
+	
+	setTimeout(function (){
+		window.onresize = function (res) {
+			echartsThree.resize();
+			echartsTwo.resize();
+			echartsFour.resize();
+		}
+	},200)
+</script>
