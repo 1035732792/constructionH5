@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>工地一张图</title>
+		<link rel="stylesheet" href="css/header.css" />
+		
+		<link href="css/header2.css" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+				font-family: "Microsoft Yahei" !important;
+				text-decoration: none;
+				list-style-type: none;
+			}
+		body{
+			background-color: #00040F;
+		}
+
+			.clear {
+				clear: both;
+			}
+
+			
+			::-webkit-input-placeholder {
+				color: #00E4FF;
+			}
+
+			.left {
+				width: 32%;
+				height: 100%;
+				float: left;
+				
+			}
+
+			.projectinfo {
+				width: 100%;
+				height: 47%;
+				background: url(img/kuang33.png) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				padding-left: 50px;
+				padding-top: 20px;
+				box-sizing: border-box;
+				color: #fff;
+
+			}
+
+			.postext {
+				position: absolute;
+				left: 50%;
+				top: 0;
+				font-size: 20px;
+				font-family: SourceHanSansCN-Regular;
+				font-weight: 400;
+				color: rgba(255, 255, 255, 1);
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+			}
+			.projectinfo_text {
+				margin-top: 15px;
+			}
+
+			.projectinfo_text p {
+				font-size: 22px;
+				font-family: SourceHanSansCN-Normal;
+				font-weight: 400;
+				color: rgba(0, 228, 255, 1);
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.projectinfo_text button {
+				width: 60px;
+				height: 24px;
+				box-shadow: 0px 0px 6px 0px rgba(9, 208, 231, 1);
+				background: transparent;
+				font-size: 12px;
+				font-family: SourceHanSansCN-Normal;
+				font-weight: 400;
+				color: rgba(0, 228, 255, 1);
+				outline: none;
+				border: 1px solid rgba(9, 208, 231, 1);
+				vertical-align: middle;
+				margin-left: 20px;
+			}
+
+			.projectinfo_areatext {
+				font-size: 14px;
+				font-family: SourceHanSansCN-Normal;
+				font-weight: 400;
+				color: rgba(255, 255, 255, 1);
+			}
+
+			.projectinfo_areanum {
+				font-size: 14px;
+				font-family: SourceHanSansCN-Normal;
+				font-weight: 400;
+				color: rgba(187, 187, 187, 1);
+				margin-left: 20px;
+			}
+
+			.lianxi {
+				font-size: 14px;
+				display: inline-block;
+				font-family: SourceHanSansCN-Normal;
+				font-weight: 400;
+				margin-left: 20px;
+				color: rgba(0, 228, 255, 1);
+				height: 20px;
+				border-bottom: 1px solid rgba(0, 228, 255, 1);
+			}
+
+			.list_item {
+				margin-top: 5%;
+			}
+
+			.perinfo {
+				width: 100%;
+				height: 47%;
+				background: url(img/kuang33.png) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				color: #fff;
+				padding: 20px 20px 0 20px;
+				box-sizing: border-box;
+			}
+			.perinfo_top{
+				height: 100%;
+				padding-top: 32px;
+				box-sizing: border-box;
+			}
+
+			.perinfo_top .num {
+				display: inline-block;
+				font-size: 35px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: rgba(0, 228, 255, 1);
+				position: relative;
+			}
+
+			.perinfo_top .righttext {
+				display: inline-block;
+				font-size: 12px;
+				font-family: SourceHanSansCN-Normal;
+				font-weight: 400;
+				margin-left: 10px;
+
+			}
+
+			.perinfo_top .righttext span {
+				color: #FFA200;
+			}
+
+			.Percentage {
+				font-size: 12px;
+				font-family: ArialMT;
+				font-weight: 400;
+				color: rgba(0, 228, 255, 1);
+				position: absolute;
+				bottom: 6px;
+				right: -10px;
+			}
+
+			.perinfo_bot {
+				font-size: 12px;
+				
+			}
+
+			.perinfo_bot_item {
+				float: left;
+				margin-right: 16px;
+				margin-top: 10px;
+			}
+
+			.first {
+
+				width: 10px;
+				height: 10px;
+				background: rgba(188, 253, 247, 1);
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.two {
+				width: 10px;
+				height: 10px;
+				background: rgba(86, 204, 255, 1);
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.perinfo_bot_item .rig {
+
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.rig1 {
+				color: rgba(188, 253, 247, 1);
+			}
+
+			.rig2 {
+				color: rgba(86, 204, 255, 1);
+			}
+
+			.three {
+				width: 10px;
+				height: 10px;
+				background: rgba(104, 117, 245, 1);
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.rig3 {
+				color: rgba(104, 117, 245, 1);
+			}
+
+			.four {
+				width: 10px;
+				height: 10px;
+				background: rgba(103, 255, 154, 1);
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.rig4 {
+				color: rgba(103, 255, 154, 1);
+			}
+
+			.five {
+				width: 10px;
+				height: 10px;
+				background: #00CCCC;
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.rig5 {
+				color: rgba(0, 204, 204, 1);
+			}
+
+			.six {
+				width: 10px;
+				height: 10px;
+				vertical-align: middle;
+				display: inline-block;
+				background: rgba(12, 31, 209, 1);
+			}
+
+			.rig6 {
+				color: rgba(12, 31, 209, 1);
+			}
+
+			.seven {
+				width: 10px;
+				height: 10px;
+				vertical-align: middle;
+				display: inline-block;
+				background: rgba(77, 21, 204, 1);
+			}
+
+			.rig7 {
+				color: rgba(93, 32, 231, 1);
+			}
+
+			.eight {
+				width: 10px;
+				height: 10px;
+
+				vertical-align: middle;
+				display: inline-block;
+				background: rgba(255, 162, 0, 1);
+			}
+
+			.rig8 {
+				color: rgba(255, 162, 0, 1);
+			}
+
+			.pro>div,
+			.pro1>div,
+			.pro2>div,
+			.pro3>div,
+			.pro4>div {
+				width: 100% !important;
+			}
+
+			.nine {
+				width: 10px;
+				height: 10px;
+				vertical-align: middle;
+				display: inline-block;
+				background: rgba(255, 0, 255, 1);
+			}
+
+			.rig9 {
+				color: rgba(255, 0, 255, 1);
+			}
+
+			.middle {
+				width: 67%;
+				height: 100%;
+				float: left;
+				margin-left: 1%;
+				box-sizing: border-box;
+			}
+
+			.middle_top {
+				position: relative;
+				background: url(img/kuang34.png) no-repeat;
+				background-size: 100% 100%;
+				width: 100%;
+				height: 96%;
+			}
+
+			.posbtngroup {
+				width: 42px;
+				height: 84px;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				border: 1px solid #4DECFF;
+				box-shadow: 0px 0px 6px 0px rgba(77, 236, 255, 1);
+				box-sizing: border-box;
+			}
+
+			.posbtngroup img {
+				margin: 0 auto;
+			}
+
+			.posbtngroup>div {
+				width: 100%;
+				height: 50%;
+				line-height: 42px;
+				text-align: center;
+			}
+
+			.firstbtng {
+				border-bottom: 1px solid #4DECFF;
+			}
+
+			.bigimg {
+				text-align: center;
+				height: 85%;
+				padding: 0 10%;
+				padding-top: 30px;
+				box-sizing: border-box;
+				
+			}
+
+			.bigimg img {
+				width: 100%;
+				margin: 0 auto;
+				height: 100%;
+			}
+
+			.Dot {
+				/* margin-top: 40px; */
+				margin-top: 4%;
+				padding-left: 40px;
+				box-sizing: border-box;
+			}
+
+			.Dot>div {
+				margin-right: 49px;
+			}
+
+			.Dot_one {
+				color: #FFFFFF;
+				font-size: 12px;
+				display: inline-block;
+			}
+
+			.Dot_one div {
+				width: 12px;
+				height: 12px;
+				background: rgba(255, 162, 0, 1);
+				border-radius: 50%;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_one span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_two {
+				color: #FFFFFF;
+				font-size: 12px;
+				display: inline-block;
+			}
+
+			.Dot_two div {
+				width: 12px;
+				height: 12px;
+				background: rgba(0, 204, 204, 1);
+				border-radius: 50%;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_two span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_three {
+				color: #FFFFFF;
+				font-size: 12px;
+				display: inline-block;
+			}
+
+			.Dot_three div {
+				width: 12px;
+				height: 12px;
+				background: rgba(0, 255, 0, 0.36);
+
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_three span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_four {
+				color: #FFFFFF;
+				font-size: 12px;
+				display: inline-block;
+			}
+
+			.Dot_four div {
+				width: 12px;
+				height: 12px;
+				background: rgba(255, 0, 0, 0.51);
+
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.Dot_four span {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.middle_bot {
+				width: 100%;
+				/* height: 300px; */
+				height: 36%;
+				background: url(img/kuang7.png) no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				padding-top: 40px;
+				padding-left: 30px;
+				margin-top: 7%;
+				box-sizing: border-box;
+			}
+
+			.middle_bot_left {
+				width: 30%;
+				height: 70%;
+				position: relative;
+				float: left;
+			}
+
+			.postitle {
+				position: absolute;
+				color: #67FF9A;
+				font-size: 14px;
+				top: -10px;
+				left: 50%;
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				transform: translateX(-50%);
+			}
+
+			.middle_bot_left #dot {
+				width: 100%;
+				height: 100%;
+			}
+
+			.tabbtn {
+				padding-left: 20px;
+			}
+
+			.tabbtn>div {
+				font-size: 12px;
+				color: #FFFFFF;
+				display: inline-block;
+				padding: 2px 5px;
+				cursor: pointer;
+			}
+
+			.active {
+				border-radius: 4px;
+				background: #FF00FF;
+			}
+
+			#main canvas {
+				width: 100% !important;
+				left: 50% !important;
+				transform: translateX(-50%) !important;
+				text-align: center !important;
+			}
+
+			.progrouip {
+				/* padding-top: 20px; */
+				padding-top: 3%;
+			}
+
+			.progrouip>div {
+				/* margin-bottom: 20px; */
+				margin-bottom: 4%;
+			}
+
+			.posdiv {
+				position: absolute;
+			}
+
+			.posdiv1 {
+				bottom: 30%;
+				left: 50%;
+			}
+			.posdiv2{
+				bottom: 37%;
+				left: 48%;
+			}
+			.posdiv3{
+				left: 78%;
+				bottom: 40%;
+			}
+			.posdiv4{
+				top: 20%;
+				left: 75%;
+			}
+			.posdiv5{
+				left: 30%;
+				top: 23%;
+			}
+			.posdiv6{
+				left: 38%;
+				top: 35%;
+			}
+			.posdiv7{
+				left: 22%;
+				top: 42%;
+			}
+			.posdiv>div:nth-child(1) {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.posdiv>div:nth-child(2) {
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				box-shadow: 0px 0px 10px 0px rgba(225, 225, 225, 1) inset;
+				color: #FFFFFF;
+				font-size: 14px;
+				line-height: 30px;
+				text-align: center;
+				vertical-align: middle;
+			}
+
+		
+			.greenpian {
+
+				width: 73px;
+				height: 111px;
+				box-shadow: 0px 0px 30px 15px rgba(0, 255, 0, 0.51) inset;
+				position: absolute;
+				left: 29%;
+				top: 40%;
+			}
+
+			.redpian {
+
+				box-shadow: 0px 0px 30px 15px rgba(255, 15, 15, 0.8) inset;
+				position: absolute;
+				left: 67%;
+				top: 35%;
+				width: 161px;
+				height: 111px;
+
+			}
+
+			.content {
+				width: 100%;
+				height: 660px;
+				padding: 0 1%;
+				padding-top: 1%;
+				box-sizing: border-box;
+			}
+			.perinfo_title{
+				font-size:16px;
+				font-family:SourceHanSansCN-Regular;
+				font-weight:400;
+				color:rgba(103,255,154,1);
+			}
+			
+		</style>
+	</head>
+
+	<body>
+	
+			<div class="head-box">
+				<div class="left-date">
+					<p>2019-03-08&nbsp;&nbsp;&nbsp;&nbsp;12:30:48&nbsp;&nbsp;&nbsp;&nbsp;星期五</p>
+				</div>
+				<div class="center-title">
+					<img src="img/topImg.png" />
+					<p>工地一张图</p>
+				</div>
+				<div class="right-btn">
+					
+				</div>
+			</div>
+			<div class="content" >
+				<div class="left">
+					<div class="projectinfo">
+						<div class="projectinfo_text">
+							<p>智慧工地花园三期</p>
+							<button>编辑</button>	
+						</div>
+						<p class="list_item">
+							<span class="projectinfo_areatext">建筑面积</span>
+							<span class="projectinfo_areanum">100 0000㎡</span>
+						</p>
+						<p class="list_item">
+							<span class="projectinfo_areatext">建筑单位</span>
+							<span class="projectinfo_areanum">湖北XX集团建设有限公司</span>
+						</p>
+						<p class="list_item">
+							<span class="projectinfo_areatext">承包单位</span>
+							<span class="projectinfo_areanum">湖北XX集团建设有限公司</span>
+						</p>
+						<p class="list_item">
+							<span class="projectinfo_areatext">开工日期</span>
+							<span class="projectinfo_areanum">2019-06-23</span>
+						</p>
+						<p class="list_item">
+							<span class="projectinfo_areatext">项目经理</span>
+							<span class="projectinfo_areanum">张某某</span>
+							<span class="lianxi">联系TA</span>
+						</p>
+					</div>
+					<div style="width: 100%;height: 2%;"></div>
+					<div class="perinfo">
+						<div class="perinfo_title">人员信息</div>
+						<div style="width: 100%;height: 55%;">
+							<div style="width: 50%;height: 100%;float: left;">
+								<div id="main" style="width: 100%;height:100%;margin: 0 auto;"></div>
+							</div>
+							<div class="perinfo_top" style="float: left;width: 50%;">
+								<div>
+									<div class="num">23</div>
+									<div class="righttext">
+										<p>当前出勤人数</p>
+										<p>总人数<span>231人</span></p>
+									</div>
+								</div>
+								<div>
+									<div class="num">
+										<p>10</p><span class="Percentage">%</span>
+									</div>
+									<div class="righttext">
+										<p>当 前出勤率</p>
+										<p>近30天日均<span>23%</span></p>
+									</div>
+								</div>
+								
+							</div>
+							
+							<div class="clear"></div>
+						</div>
+						
+						
+						<div class="perinfo_bot">
+							<div class="perinfo_bot_item">
+								<div class="first"></div>
+								<div class="rig rig1">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="two"></div>
+								<div class="rig rig2">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="three"></div>
+								<div class="rig rig3">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="four"></div>
+								<div class="rig rig4">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="five"></div>
+								<div class="rig rig5">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="six"></div>
+								<div class="rig rig6">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="seven"></div>
+								<div class="rig rig7">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="eight"></div>
+								<div class="rig rig8">砌筑工 4人 9.2%</div>
+
+							</div>
+							<div class="perinfo_bot_item">
+								<div class="nine"></div>
+								<div class="rig rig9">砌筑工 4人 9.2%</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle">
+					<div class="middle_top">
+						<div class="posbtngroup">
+							<div class="firstbtng">
+								<img src="img/fangda.png" />
+							</div>
+							<div>
+								<img src="img/suobiao.png" alt="" />
+							</div>
+						</div>
+						<div class="bigimg">
+							<img src="img/kuang35.png" style="position: relative;" />
+							
+							
+							<div class="posdiv posdiv1">
+								<div style="background: #FFA200;"></div>
+								<div>门禁设备1号</div>
+							</div>
+							<div class="posdiv posdiv2">
+								<div style="background: #00CCCC;"></div>
+								<div>视频设备1号</div>
+							</div>
+							<div class="posdiv posdiv3">
+								<div style="background: #FFA200;"></div>
+								<div>门禁设备4号</div>
+							</div>
+							<div class="posdiv posdiv4">
+								<div style="background: #00CCCC;"></div>
+								<div>视频设备3号</div>
+							</div>
+							<div class="posdiv posdiv5">
+								<div style="background: #FFA200;"></div>
+								<div>门禁设备3号</div>
+							</div>
+							<div class="posdiv posdiv6">
+								<div style="background: #00CCCC;"></div>
+								<div>视频设备2号</div>
+							</div>
+							<div class="posdiv posdiv7">
+								<div style="background: #FFA200;"></div>
+								<div>门禁设备2号</div>
+							</div>
+							<div class="greenpian"></div>
+							<div class="redpian"></div>
+						</div>
+						<div class="Dot">
+							<div class="Dot_one">
+								<div></div>
+								<span>门禁设备</span>
+							</div>
+							<div class="Dot_two">
+								<div></div>
+								<span>视频设备</span>
+							</div>
+							<div class="Dot_three">
+								<div></div>
+								<span>安全区域</span>
+							</div>
+							<div class="Dot_four">
+								<div></div>
+								<span>危险区域</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		
+
+	</body>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/echarts.js"></script>
+	<script type="text/javascript">
+		var tabbtns = $(".tabbtn div");
+		$(tabbtns).each(function() {
+			$(this).click(function() {
+				$(this).addClass("active").siblings().removeClass("active");
+			})
+		})
+		var myChart = echarts.init(document.getElementById('main'));
+		option = {
+			tooltip: {
+				trigger: 'item',
+				formatter: "{a} <br/>{b}: {c} ({d}%)"
+			},
+			color: ['#56CCFF', '#6875F5', '#67FF9A', '#FF00FF', '#4D15CC', '#FFA200', '#00CCCC', '#0C1FD1', '#BCFDF7'],
+			grid: {
+				right: '10%',
+				top: '-10%',
+				left: '10%',
+				// bottom:'15%'
+			},
+			legend: {
+				orient: 'vertical',
+				x: 'left',
+				//      data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','粉红色地方','搜索引擎']
+			},
+			series: [{
+				name: '',
+				type: 'pie',
+				radius: ['50%', '70%'],
+				avoidLabelOverlap: false,
+
+				label: {
+					normal: {
+						show: false,
+						position: 'center'
+					},
+					emphasis: {
+						show: false,
+						textStyle: {
+							fontSize: '30',
+							fontWeight: 'bold'
+						}
+					}
+				},
+				labelLine: {
+					normal: {
+						show: false
+					}
+				},
+				data: [{
+						value: 335
+					},
+					{
+						value: 310
+					},
+					{
+						value: 234
+					},
+					{
+						value: 135
+					},
+					{
+						value: 200
+					},
+					{
+						value: 300
+					},
+					{
+						value: 300
+					},
+					{
+						value: 300
+					},
+					{
+						value: 300
+					},
+				]
+			}]
+		};
+		myChart.setOption(option);
+		setTimeout(() => {
+			window.onresize = function() {
+				myChart.resize();
+			}
+		}, 200)
+	</script>
+</html>
